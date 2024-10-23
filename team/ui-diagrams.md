@@ -38,7 +38,7 @@ Users can quickly log on or sign up so their flashcards/tests will be saved. Als
 
 The **Subjects Screen** will pop up if prompted by the click of the Subjects button found on the intro screen. This will allow the users to not only have creative freedom but also have access to way more subject matter than they thought. Additionally, the sites socials are linked along the bottom as well.
 
-<img width="858" alt="Screenshot 2024-10-22 at 7 33 19 AM" src="./image-2.png">
+<img width="858" alt="Screenshot 2024-10-22 at 7 33 19 AM" src="./Screen Shot 2024-10-22 at 7.33.19 AM.png">
 
 On this screen, users will be able to accomplish the following:
 1. **Subjects** : Users will be able to click on any subject to choose what they want to make they're flashcards for. There are so many options/templates to choose from and so many tests provided.
