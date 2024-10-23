@@ -1,4 +1,6 @@
-**Top 3 commits**
+## Contribution Log for Sydnie Lui
+
+## 10/16/2024
 <br>
 1.) Finished roles.md
 <br>
