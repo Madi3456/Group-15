@@ -6,7 +6,6 @@ The **Introduction Screen** is the first thing the users will see. They will be 
 
 <img width="858" alt="Screenshot 2024-10-21 at 11 35 27 PM" src="https://github.com/user-attachments/assets/d4b8c5fd-c8a9-4050-99a1-7ce8964fdab6">
 
-
 On this screen, users will be able to do a few introductory things:
 1. **Log in/Sign up** : Users will be able to click a button that will lead them to logging in/signing up with their user credentials 
 2. **View services** : Users will be able to view the different tools and services that they will be offered 
@@ -21,7 +20,8 @@ Users can quickly log on or sign up so their flashcards/tests will be saved. The
 
 The **Sign Up/Login Screen** will pop up if prompted by the click of the sign in/login button found on the intro screen. This will allow the users to log in if they are returning or sign up if they are new to the site. They can make it through creating a username and password. Additionally, the sites socials are linked along the bottom as well.
 
-![Sign In/Log In Screen design]()
+
+<img width="858" alt="Screenshot 2024-10-22 at 7 33 19 AM" src="./image-1.png">
 
 On this screen, users will be able to accomplish the following:
 1. **Log in** : Users will be able to fill out their account's username & password and click a button that will lead them into logging in, using their user credentials as returing members.
@@ -38,7 +38,7 @@ Users can quickly log on or sign up so their flashcards/tests will be saved. Als
 
 The **Subjects Screen** will pop up if prompted by the click of the Subjects button found on the intro screen. This will allow the users to not only have creative freedom but also have access to way more subject matter than they thought. Additionally, the sites socials are linked along the bottom as well.
 
-![Subjects Screen design]()
+<img width="858" alt="Screenshot 2024-10-22 at 7 33 19 AM" src="./image-2.png">
 
 On this screen, users will be able to accomplish the following:
 1. **Subjects** : Users will be able to click on any subject to choose what they want to make they're flashcards for. There are so many options/templates to choose from and so many tests provided.

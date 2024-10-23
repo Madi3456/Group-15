@@ -77,9 +77,9 @@
 <br>
 **Top 3 commits**
 <br>
-1.) Finished roles.md: https://github.com/Madi3456/Group-15/commit/f23592f5439cfaf371b2a75539090c034de35908
+1.) Finished roles.md
 <br>
-2.)Created the SignUp/Login Screen(UI Diagram):
+2.)Created the SignUp/Login Screen(UI Diagram)
 <br>
-3>)Created the Subjects Screen(UI Diagram):
+3>)Created the Subjects Screen(UI Diagram)
 </p>
