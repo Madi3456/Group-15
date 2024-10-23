@@ -1,6 +1,6 @@
-## Contribution Log for Sydnie Lui
+## Contribution Log for Meghan Duddu
 
-## 10/16/2024
+## 10/21/2024
 <br>
 1.) Finished roles.md
 <br>
