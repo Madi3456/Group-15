@@ -81,5 +81,5 @@
 <br>
 2.)Created the SignUp/Login Screen(UI Diagram)
 <br>
-3>)Created the Subjects Screen(UI Diagram)
+3.)Created the Subjects Screen(UI Diagram)
 </p>
