@@ -24,4 +24,16 @@
 
  - **Task**: Started bringing the design of the subjects page to life
  - **Details**: I started writing the html of the subjects page
- - **Link to Commit**: [Commit on subjects.html](https://github.com/Madi3456/Group-15/blob/main/project/pages/subjects.html)
+ - **Link to Commit**: [Commit on subjects.html](https://github.com/Madi3456/Group-15/pull/34/commits/6d10bb410c3b1a86c00f636b63ea201287afc5ab)
+
+ - **Task**: Continue working on subjects.html
+ - **Details**: I added JavaScript to subjects.html
+ - **Link to Commit**: [Commit on subjects.html](https://github.com/Madi3456/Group-15/pull/34/commits/4eed31fa90ad793fafe927f2a51024b5403e89f1)
+
+ - **Task**: Completed subjects.html in subject-page branch
+ - **Details**: Finalized subjects.html and created a pull request
+ - **Link to Commit**: [Commit on subjects.html](https://github.com/Madi3456/Group-15/pull/34)
+
+
+
+
