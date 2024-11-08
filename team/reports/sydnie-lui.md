@@ -20,4 +20,4 @@
 ## 11/8/2024
  - **Task**: Started bringing the design of the subjects page to life
  - **Details**: I started writing the html of the subjects page
- - **Link to Commit**: [Commit on subjects.html](https://github.com/Madi3456/Group-15/blob/main/team/roles.md)
+ - **Link to Commit**: [Commit on subjects.html](project/pages/subjects.html)
