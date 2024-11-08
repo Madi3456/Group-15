@@ -34,6 +34,13 @@
  - **Details**: Finalized subjects.html and created a pull request
  - **Link to Commit**: [Commit on subjects.html](https://github.com/Madi3456/Group-15/pull/34)
 
+ - **Task**: Fixed subjects.html in subject-page branch
+ - **Details**: Caught mistake in JavaScript in subjects.html in subject-page branch
+ - **Link to Commit**: [Commit on subjects.html](https://github.com/Madi3456/Group-15/pull/34/commits/e79219f4bcc83b91f0302aa885a39fbe325c0e84)
+
+ - **Task**: Talked with team and merged pull request
+ - **Details**: Merged Pull Request to Main
+ - **Link to Commit**: [Commit on subjects.html](https://github.com/Madi3456/Group-15/pull/34)
 
 
 
