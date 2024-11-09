@@ -7,3 +7,6 @@
 ## 10/21/2024
 <p> Formatting setting up users using user section. Aswell as the roles section
 Link:https://github.com/Madi3456/Group-15/commit/a2f13a6d9eafb0284e50f033887bfb401a62b66a </p>
+
+## 11/9/2024 4:10pm
+<p>Starting on the tests web page lay out. Created the test boxes as well as the frame work and submit button for the page. Also made a little frog to help lower stress with user</p>
