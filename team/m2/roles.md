@@ -74,4 +74,13 @@
 ## Meghan Duddu - Note-Taker
 <p>**Role**: Meghan is responsible for taking care of meeting minutes, recording detailed notes during meetings, and ensuring that action items are clearly addressed/communicated.
 
+<br>
+**Top 3 commits**
+<br>
+1.) Finished roles.md
+<br>
+2.)Created the SignUp/Login Screen(UI Diagram)
+<br>
+3.)Created the Subjects Screen(UI Diagram)
+</p>
 
