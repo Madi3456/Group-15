@@ -32,6 +32,11 @@ p {
   margin-bottom: 20px;
 }
 
+h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
 .subject-input {
   width: 100%;
   padding: 10px;
