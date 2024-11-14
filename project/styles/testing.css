@@ -1,7 +1,16 @@
 .header{
     padding: 20px;
     text-align: center;
-    background: #e8efe8;
+    background: #cfe1c9;
+    color: #666;
+    font-size: 20px;
+}
+.heading-box{
+    padding: 20px;
+    height: 150px;
+    width: 2500px;
+    text-align: center;
+    background: #cfe1c9;
     color: #666;
     font-size: 20px;
 }
@@ -14,9 +23,11 @@
     gap: 20px;
 }
 .testing-box {
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
     font-family: Arial, Helvetica, sans-serif;
-    height: 250px;
-    width: 350px;
+    height: 300px;
+    width: 400px;
     padding:20;
     border-radius: 8px;
     background-color: beige;
@@ -24,6 +35,9 @@
     font-size: 25px;
     text-align: center;
     border:2px solid #666;
+    gap:5px;
+    align-items: center;
+    justify-content: center;
 }
 .question {
     font-family: Arial, Helvetica, sans-serif;
@@ -33,6 +47,8 @@
     background-color: beige;
     color:#666;
     font-size: 20px;
+    padding: 5px;
+    text-align: center;
 }
 .answer {
     font-family: Arial, Helvetica, sans-serif;
@@ -41,6 +57,7 @@
     background-color: beige;
     color:#666;
     font-size: 20px;
+    align-items: center;
 }
 .answer:hover{
     background-color:#EAE3C9;
@@ -50,4 +67,8 @@
     background-color: #666;
     color:white;
     font-size: 15px;
+}
+
+.submit-button:hover{
+    background-color: #777;
 }
