@@ -13,7 +13,7 @@ function addFlashcards() {
         const flashcardElement = document.createElement('div');
         flashcardElement.classList.add('flashcard');
         flashcardElement.innerHTML = `
-      <div class="term">'${i.term}'</div>
+      <div class="term">${i.term}</div>
       <div class="definition">${i.definition}</div>
         `;
     cards.appendChild(flashcardElement);
