@@ -1,21 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Flashcard Viewer</title>
+    <title>Flashcard Study Set</title>
+    <link rel="stylesheet" href="../styles/inside-the-sets.css">
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <div class="flashcard-container">
-        <div class="flashcard">
-            <div class="flashcard-front">
-                <p>Question or Term</p>
+    <header class="header">
+        <h1>Selected Study Set: <span id="set-title">Test Set</span></h1>
+    </header>
+    <main class="container">
+        <section class="flashcards">
+            <div class="flashcard">
+                <p class="question">Question 1?</p>
+                <p class="answer">Answer 1</p>
+                <div class="edit-button">Edit</div>
             </div>
-            <div class="flashcard-back">
-                <p>Answer or Definition</p>
+            <div class="flashcard">
+                <p class="question">Question 2?</p>
+                <p class="answer">Answer 2</p>
+                <div class="edit-button">Edit</div>
             </div>
-        </div>
-        <button class="next-button">Next</button>
-        <button class="previous-button">Previous</button>
-    </div>
+            <div class="flashcard">
+                <p class="question">Question 3?</p>
+                <p class="answer">Answer 3</p>
+                <div class="edit-button">Edit</div>
+            </div>
+        </section>
+    </main>
+    <main class="container">
+        <section class="flashcards">
+            <div class="flashcard add-new">
+                <p class="question">Add new</p>
+                <p class="answer">+</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
