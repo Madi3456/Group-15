@@ -155,12 +155,21 @@
                 <span class="close-search">×</span>
             </div>
             
-            <button class="menu-button">Sign Up / Log In</button>
-            <button class="menu-button">Tests</button>
-            <button class="menu-button">Subjects</button>
-            <button class="menu-button">Study Guides</button>
-            <button class="menu-button">Flashcards</button>
-            <button class="menu-button">Learn</button>
+            <button id="btn-sign-in" class="menu-button">Sign Up / Log In</button>
+            <button id="btn-tests" class="menu-button">Tests</button>
+            <button id="btn-subjects" class="menu-button">Subjects</button>
+            <button id="btn-study-guides" class="menu-button">Study Guides</button>
+            <button id="btn-flashcards" class="menu-button">Flashcards</button>
+            <button id="btn-learn" class="menu-button">Learn</button>
+            
+            <script>
+                document.getElementById("btn-sign-in").onclick = () => location.href = "sign-in.html";
+                document.getElementById("btn-tests").onclick = () => location.href = "testing.html";
+                document.getElementById("btn-subjects").onclick = () => location.href = "subjects.html";
+                document.getElementById("btn-study-guides").onclick = () => location.href = "entering-study-sets.html";
+                document.getElementById("btn-flashcards").onclick = () => location.href = "inside-the-sets.html";
+                document.getElementById("btn-learn").onclick = () => location.href = "learn.html";
+            </script>
             
             <div class="social-links">
                 <a href="#" class="social-link">
