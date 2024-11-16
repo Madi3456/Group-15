@@ -4,7 +4,10 @@
 
 The **Introduction Screen** is the first thing the users will see. They will be able to log in or sign up to view their progress, and they will also be able to view various services that the app offers if they have not yet chosen to make an account of Freelit 
 
+
 <img width="858" alt="Screenshot 2024-10-21 at 11 35 27 PM" src="https://github.com/user-attachments/assets/d4b8c5fd-c8a9-4050-99a1-7ce8964fdab6">
+![Introduction Screen design](https://imgur.com/a/XlyoODT)
+
 
 On this screen, users will be able to do a few introductory things:
 1. **Log in/Sign up** : Users will be able to click a button that will lead them to logging in/signing up with their user credentials 
@@ -14,6 +17,7 @@ On this screen, users will be able to do a few introductory things:
 This intro screen has been created so users will be able to initially guide through Freelit with ease. It offers a clear and intuitive interface that allows users to swiftly access their desired features and services. By simplifying the initial navigation process, this screen ensures that users can effortlessly find their way and engage with the app’s offerings without any frustration.
 
 **Use Case**: 
+
 Users can quickly log on or sign up so their flashcards/tests will be saved. They will also be able to view previews of all our tools so they can decide if they want to use the app.
 
 ## Sign Up/Log In Screen
@@ -38,7 +42,7 @@ Users can quickly log on or sign up so their flashcards/tests will be saved. Als
 
 The **Subjects Screen** will pop up if prompted by the click of the Subjects button found on the intro screen. This will allow the users to not only have creative freedom but also have access to way more subject matter than they thought. Additionally, the sites socials are linked along the bottom as well.
 
-<img width="858" alt="Screenshot 2024-10-22 at 7 33 19 AM" src="./image-2.png">
+<img width="858" alt="Screenshot 2024-10-22 at 7 33 19 AM" src="./Screen Shot 2024-10-22 at 7.33.19 AM.png">
 
 On this screen, users will be able to accomplish the following:
 1. **Subjects** : Users will be able to click on any subject to choose what they want to make they're flashcards for. There are so many options/templates to choose from and so many tests provided.
@@ -48,3 +52,4 @@ This Subjects Screen is designed to help users navigate Freelit smoothly from th
 
 **Use Case**: 
 Users can have acces to lots of different flashcards/simualations for any subject they wish to choose. Also there is lot's of functionality with having the socials along the bottom.
+

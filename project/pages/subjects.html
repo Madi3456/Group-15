@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subjects Screen - FreeLit</title>
+  <link rel="stylesheet" href="../styles/subjects.css">
+</head>
+<body>
+  <div class="container">
+    <h1>FreeLit</h1>
+    <p>Optimize Your Study Sessions, For Free!</p>
+    <h2>Subjects</h2>
+    
+    <div class="subjects-grid">
+      <div class="subject" onclick="selectSubject('Math')">Math</div>
+      <div class="subject" onclick="selectSubject('Science')">Science</div>
+      <div class="subject" onclick="selectSubject('English')">English</div>
+      <div class="subject" onclick="selectSubject('Languages')">Languages</div>
+      <div class="subject" onclick="selectSubject('Social Studies')">Social Studies</div>
+      <div class="subject" onclick="selectSubject('Art')">Art</div>
+      <div class="subject" onclick="selectSubject('Music')">Music</div>
+      <div class="subject" onclick="selectSubject('More')">More...</div>
+    </div>
+    
+    <button class="enter-button" onclick="enterStudySession()">Enter</button>
+    
+    <div class="social-icons">
+      <a href="#" target="_blank">Facebook</a>
+      <a href="#" target="_blank">Twitter</a>
+      <a href="#" target="_blank">Instagram</a>
+    </div>
+  </div>
+  
+  <script>
+    function selectSubject(subject) {
+      alert("You selected " + subject);
+    }
+    function enterStudySession() {
+      alert('Entering study session...');
+    }
+  </script>
+    
+</body>
+</html>
