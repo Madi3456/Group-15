@@ -1,1 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Scores History</title>
+    <link rel="stylesheet" href="learn.css">
+</head>
+<body>
+    <h1>Test Scores History</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Test</th>
+                <th>Subject</th>
+                <th>Score</th>
+                <th>Date Taken</th>
+            </tr>
+        </thead>
+        <tbody id="scoreTable">
+        </tbody>
+    </table>
+
+    <canvas id="scoreChart"></canvas>
+
+    <script>
+        // Fake data
+        const testData = [
+            { test: "Test 1", subject: "History", score: 85, date: "2024-11-01" },
+            { test: "Test 2", subject: "Math", score: 92, date: "2024-11-03" },
+            { test: "Test 3", subject: "Science", score: 78, date: "2024-11-05" },
+            { test: "Test 4", subject: "History", score: 88, date: "2024-11-07" },
+            { test: "Test 5", subject: "Math", score: 95, date: "2024-11-10" },
+        ];
+
+        const tableBody = document.getElementById("scoreTable");
+        testData.forEach((data) => {
+            const row = `<tr>
+                <td>${data.test}</td>
+                <td>${data.subject}</td>
+                <td>${data.score}</td>
+                <td>${data.date}</td>
+            </tr>`;
+            tableBody.innerHTML += row;
+        });
+
+        const labels = testData.map(data => data.test);
+        const scores = testData.map(data => data.score);
+
+    </script>
+</body>
+</html>
 
