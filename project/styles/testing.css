@@ -1,0 +1,74 @@
+.header{
+    padding: 20px;
+    text-align: center;
+    background: #cfe1c9;
+    color: #666;
+    font-size: 20px;
+}
+.heading-box{
+    padding: 20px;
+    height: 150px;
+    width: 2500px;
+    text-align: center;
+    background: #cfe1c9;
+    color: #666;
+    font-size: 20px;
+}
+
+.test-list {
+    display: grid;
+    align-self: center;
+    padding: 20px 0;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+.testing-box {
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+    font-family: Arial, Helvetica, sans-serif;
+    height: 300px;
+    width: 400px;
+    padding:20;
+    border-radius: 8px;
+    background-color: beige;
+    color:#666;
+    font-size: 25px;
+    text-align: center;
+    border:2px solid #666;
+    gap:5px;
+    align-items: center;
+    justify-content: center;
+}
+.question {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 70px;
+    width: 350px;
+    border-radius: 8px;
+    background-color: beige;
+    color:#666;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
+.answer {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 70px;
+    width: 250px;
+    background-color: beige;
+    color:#666;
+    font-size: 20px;
+    align-items: center;
+}
+.answer:hover{
+    background-color:#EAE3C9;
+}
+
+.submit-button{
+    background-color: #666;
+    color:white;
+    font-size: 15px;
+}
+
+.submit-button:hover{
+    background-color: #777;
+}

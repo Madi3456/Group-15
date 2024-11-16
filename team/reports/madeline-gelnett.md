@@ -7,3 +7,9 @@
 ## 10/21/2024
 <p> Formatting setting up users using user section. Aswell as the roles section
 Link:https://github.com/Madi3456/Group-15/commit/a2f13a6d9eafb0284e50f033887bfb401a62b66a </p>
+
+## 11/9/2024 4:10pm
+<p>Starting on the tests web page lay out. Created the test boxes as well as the frame work and submit button for the page. Also made a little frog to help lower stress with user</p>
+
+## 11/14/2024 11:44pm
+<p>Adding a little back end to show how the cards will be generated. This will make it easier in the future to make sure it will fit different text sizes of cards.</p>
