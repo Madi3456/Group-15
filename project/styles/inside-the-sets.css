@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(75, 158, 79);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #e8efe8;
     color: #333;
     line-height: 1.6;
     padding: 20px;
@@ -20,11 +20,11 @@ body {
 
 .header h1 {
     font-size: 2rem;
-    color: #ffffff;
+    color: #333;
 }
 
 #set-title {
-    color: #e2f537d2;
+    color: #89a989;
 }
 
 .container {
@@ -43,7 +43,7 @@ body {
 .flashcard {
     width: 200px;
     background-color: #ffffff;
-    border: 2px solid #bde9c0;
+    border: 2px solid #89a98960;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -60,24 +60,24 @@ body {
 .flashcard .question {
     font-weight: bold;
     margin-bottom: 10px;
-    color: #11be45;
+    color: #333;
 }
 
 .flashcard .answer {
-    display: none;
+    visibility: hidden;
     font-style: italic;
-    color: #13d474;
+    color: #89a989;
 }
 
 .flashcard:hover .answer {
-    display: block;
+    visibility: visible;
 }
 
 .edit-button {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #05c746;
+    background-color: #89a989;;
     color: #ffffff;
     font-size: 0.8rem;
     padding: 5px 8px;
