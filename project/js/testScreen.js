@@ -1,3 +1,6 @@
+//import { setDataBase } from "./Storage";
+
+//console.log(setStorage.getTasks());
 const testTest = new Map();
 testTest.set("What is the language we use to style a Web page?","css");
 testTest.set("What is the standard markup language for Web pages?","html");
