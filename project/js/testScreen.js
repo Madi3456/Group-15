@@ -1,4 +1,4 @@
-//import { setDataBase } from "./Storage";
+import {UserDataBase, User, StudySet } from "../js/Storage.js";
 
 //console.log(setStorage.getTasks());
 const testTest = new Map();
@@ -124,3 +124,27 @@ const results = ()=>{
 
 const submitButton = document.getElementById("submit");
 submitButton.addEventListener("click",()=>{results()});
+
+
+
+
+
+const user1 = new User("Maddie", "mgelnett@umass.edu","1");
+
+const t = new Map();
+t.set("What is the language we use to style a Web page?","css");
+t.set("What is the standard markup language for Web pages?","html");
+t.set("What is an object-oriented computer programming language commonly used to create interactive effects within web browsers?","javascript");
+t.set("What sound do frogs make?","ribbit");
+t.set("Is 326 awesome?","yes");
+
+const set1 = new StudySet("CICS 326",t);
+user1.addSets(set1);
+
+userStorage.addTask(user1);
+
+
+const taskDB = new window.UserDatabase("TaskDB");
+await taskDB.addUser(user1);
+const username = await taskDB.getUsers();
+console.log(username);

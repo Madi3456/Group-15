@@ -1,84 +1,78 @@
-export class setDataBase {
-    constructor(dbName) {
-      this.dbName = dbName;
-    }
-  
-    // Method to open the database
-    async openDatabase() {
-      return new Promise((resolve, reject) => {
-        if (this.dbName === "") {
-          reject("Database name cannot be empty.");
-          return;
+export class UserDataBase {
+  constructor(dbName) {
+    this.dbName = dbName;
+  }
+  async openDatabase() {
+    return new Promise((resolve, reject) => {
+      if (this.dbName === "") {
+        reject("Database name cannot be empty.");
+        return;
+      }
+
+      let request = indexedDB.open(this.dbName, 1);
+      request.onupgradeneeded = function (event) {
+        let db = event.target.result;
+        if (!db.objectStoreNames.contains("users")) {
+          db.createObjectStore("users", { keyPath: "id" });
         }
-  
-        let request = indexedDB.open(this.dbName, 1);
-        request.onupgradeneeded = function (event) {
-          let db = event.target.result;
-          if (!db.objectStoreNames.contains("tasks")) {
-            db.createObjectStore("tasks", { keyPath: "id" });
-          }
-        };
-        request.onsuccess = function (event) {
-          resolve(event.target.result);
-        };
-        request.onerror = function (event) {
-          reject(event.target.error);
-        };
-      });
-    }
-  
-    // Method to add a task
-    async addTask(task) {
-      const db = await this.openDatabase();
-      const tx = db.transaction("tasks", "readwrite");
-      const store = tx.objectStore("tasks");
-      store.add(task);
-  
-      return new Promise((resolve, reject) => {
-        tx.oncomplete = function () {
-          resolve("Task added successfully!");
-        };
-        tx.onerror = function () {
-          reject("Failed to add task.");
-        };
-      });
-    }
-//   
-    Method to get all tasks
-    async getTasks() {
-      // TASK: Implement this method
-      const db = await this.openDatabase();
-      const tx = db.transaction("tasks", "readonly");
-      const store = tx.objectStore("tasks");
-      const stuff = store.getAll();
-  
-      return new Promise((resolve, reject) => {
-        stuff.onsuccess=function(event){
-          let arr = event.target.result;
-          resolve(arr);
-        }
-        stuff.onerror = function(){
-          reject("Failed to get tasks.");
-        }
-      });
-    }
-  
-    // Method to delete a task by its ID
-    async deleteTask(taskId) {
-      const db = await this.openDatabase();
-      const tx = db.transaction("tasks", "readwrite");
-      const store = tx.objectStore("tasks");
-      const stuff = store.delete(taskId);
-  
-      return new Promise((resolve, reject) => {
-        stuff.onsuccess=function(){
-          resolve("Task deleted successfully!");
-        }
-        stuff.onerror = function(){
-          reject("Failed to delete object.");
-        }
-      });
-    }
+      };
+      request.onsuccess = function (event) {
+        resolve(event.target.result);
+      };
+      request.onerror = function (event) {
+        reject(event.target.error);
+      };
+    });
+  }
+
+  async addUser(user) {
+    const db = await this.openDatabase();
+    const tx = db.transaction("users", "readwrite");
+    const store = tx.objectStore("users");
+    store.add(user,user.getUserID);
+
+    return new Promise((resolve, reject) => {
+      tx.oncomplete = function () {
+        resolve("User added successfully!");
+      };
+      tx.onerror = function () {
+        reject("Failed to add user.");
+      };
+    });
+  }
+
+  async getUsers() {
+    const db = await this.openDatabase();
+    const tx = db.transaction("users", "readonly");
+    const store = tx.objectStore("users");
+    const stuff = store.getAll();
+
+    return new Promise((resolve, reject) => {
+      stuff.onsuccess=function(event){
+        let arr = event.target.result;
+        resolve(arr);
+      }
+      stuff.onerror = function(){
+        reject("Failed to get users.");
+      }
+    });
+  }
+
+  async deleteUser(user) {
+    const db = await this.openDatabase();
+    const tx = db.transaction("users", "readwrite");
+    const store = tx.objectStore("users");
+    const stuff = store.delete(user.userID);
+
+    return new Promise((resolve, reject) => {
+      stuff.onsuccess=function(){
+        resolve("User deleted successfully!");
+      }
+      stuff.onerror = function(){
+        reject("Failed to delete user.");
+      }
+    });
+  }
 }
 
 
@@ -146,18 +140,3 @@ export class User{
     }
 }
 
-
-export const setStorage = new setDataBase();
-const user1 = new User("Maddie", "mgelnett@umass.edu","1");
-
-const testTest = new Map();
-testTest.set("What is the language we use to style a Web page?","css");
-testTest.set("What is the standard markup language for Web pages?","html");
-testTest.set("What is an object-oriented computer programming language commonly used to create interactive effects within web browsers?","javascript");
-testTest.set("What sound do frogs make?","ribbit");
-testTest.set("Is 326 awesome?","yes");
-
-const set1 = new StudySet("CICS 326",testTest);
-user1.addSets(set1);
-
-//setDataBase.add(user1);

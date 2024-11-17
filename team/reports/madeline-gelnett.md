@@ -20,7 +20,7 @@ Link:https://github.com/Madi3456/Group-15/commit/f92c8ecb67527cd799b3441bf97ce04
 <p>Created the results page using the backend and other class items used in the past. This show's the user their mock grade as well as the questions they got wrong or right and the correct answer to the question. Link:https://github.com/Madi3456/Group-15/commit/4f26162bcfc77fe013b1e8b4870649b20d111c26</p>
 
 ## 11/16/2024 9:02pm
-<p>Finish text files for m3 and also worked on my mermaid diagram. Attempted to start working on the database just need to find a place to store stuff</p>
+<p>Finish text files for m3 and also worked on my mermaid diagram. Attempted to start working on the database just need to find a place to store stuff. Link:https://github.com/Madi3456/Group-15/commit/24cc623e747dc413df3576084f402710304772c4 </p>
 
 ## 11/17/2024 2:11pm
 <p>Updating the UI diagrams to have the new UI html files. Also adding the old stuff from milestone 2 to three as a not much has changed</p>
