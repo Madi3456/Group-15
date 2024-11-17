@@ -147,7 +147,7 @@ export class User{
 }
 
 
-//export const setStorage = new setDataBase();
+export const setStorage = new setDataBase();
 const user1 = new User("Maddie", "mgelnett@umass.edu","1");
 
 const testTest = new Map();

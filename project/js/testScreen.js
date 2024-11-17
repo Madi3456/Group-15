@@ -28,7 +28,11 @@ for(let i = 0;i<key.length;i++){
     question.classList.add("question");
     question.textContent="Definition: "+key[i];
 
-    const answerText= document.createTextNode("Answer:");
+    const answerText= document.createElement("answer");
+    answerText.style.left = '50%';
+    answerText.style.top = '50%';
+    answerText.style.transform = 'translate(36%, -35%)';
+    answerText.innerHTML="Answer:";
 
     const answer = document.createElement("input");
     answer.style.left = '50%';
@@ -108,9 +112,11 @@ const results = ()=>{
     button.classList.add("submit-button");
     button.innerHTML="Back";
     testList.appendChild(button);
+    button.addEventListener("click",()=>{location.href = "intro.html"});
     const button2 = document.createElement("button");
     button2.classList.add("submit-button");
     button2.innerHTML="Restart";
+    button2.addEventListener("click",()=>{location.href = "testing.html"})
     testList.appendChild(button2);
 }
 
