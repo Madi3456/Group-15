@@ -1,4 +1,4 @@
-//import { setDataBase } from "./Storage";
+import {UserDataBase, User, StudySet } from "../js/Storage.js";
 
 //console.log(setStorage.getTasks());
 const testTest = new Map();
@@ -28,7 +28,11 @@ for(let i = 0;i<key.length;i++){
     question.classList.add("question");
     question.textContent="Definition: "+key[i];
 
-    const answerText= document.createTextNode("Answer:");
+    const answerText= document.createElement("answer");
+    answerText.style.left = '50%';
+    answerText.style.top = '50%';
+    answerText.style.transform = 'translate(36%, -35%)';
+    answerText.innerHTML="Answer:";
 
     const answer = document.createElement("input");
     answer.style.left = '50%';
@@ -104,17 +108,49 @@ const results = ()=>{
         questionbox.appendChild(answer);
         testList.appendChild(questionbox);
     }
+
+    const buttonStorage = document.createElement("div");
+    buttonStorage.classList.add("test-list");
     const button = document.createElement("button");
     button.classList.add("submit-button");
     button.innerHTML="Back";
-    testList.appendChild(button);
+    buttonStorage.appendChild(button);
+
+    button.addEventListener("click",()=>{location.href = "intro.html"});
     const button2 = document.createElement("button");
     button2.classList.add("submit-button");
     button2.innerHTML="Restart";
-    testList.appendChild(button2);
+    button2.addEventListener("click",()=>{location.href = "testing.html"})
+    buttonStorage.appendChild(button2);
+
+    testList.appendChild(buttonStorage);
 }
 
 
 
 const submitButton = document.getElementById("submit");
 submitButton.addEventListener("click",()=>{results()});
+
+
+
+
+
+const user1 = new User("Maddie", "mgelnett@umass.edu","1");
+
+const t = new Map();
+t.set("What is the language we use to style a Web page?","css");
+t.set("What is the standard markup language for Web pages?","html");
+t.set("What is an object-oriented computer programming language commonly used to create interactive effects within web browsers?","javascript");
+t.set("What sound do frogs make?","ribbit");
+t.set("Is 326 awesome?","yes");
+
+// const set1 = new StudySet("CICS 326",t);
+// user1.addSets(set1);
+
+// const userDB = new UserDataBase("testDB");
+// try {
+//     await userDB.addUser(user1);
+//     console.log("Users added successfully.");
+//   } catch (error) {
+//     console.error("Error adding users:", error);
+// }
