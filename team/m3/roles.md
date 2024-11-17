@@ -56,11 +56,11 @@
 <br>
 **Top 3 commits**
 <br>
-1.)Added correctness feature: https://github.com/Madi3456/Group-15/commit/a18906264af95a4e6fac6eaf3b5159b561794839
+1.) Created functions that make flashcards readible for users: https://github.com/Madi3456/Group-15/commit/efb8ebc26df36659c367936d9b6a410733badc18 
 <br>
-2.) Changed feature name: https://github.com/Madi3456/Group-15/commit/8daeb1e99724989f663ebec2c2ca9d98b4627e44
+2.) Created input boxes/buttons on page: https://github.com/Madi3456/Group-15/commit/1e07191d9a70600cb5c59d523d4312c675d9d9e0
 <br>
-3.)Edited descriptions: https://github.com/Madi3456/Group-15/commit/59deb5ff7c9faf9054dda97a24a7dc2bcd851a22
+3.)Customized styling of creating studyset webpage: https://github.com/Madi3456/Group-15/commit/d17013da52d1d1fb2226d63d52411a0aacafb780
 
 
 </p>
