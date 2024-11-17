@@ -7,7 +7,7 @@
 <br>
 2.)Finishing up the problem section[https://github.com/Madi3456/Group-15/commit/7a8afea8ba84ae90e1999827a5f5f6f691fbbf33]
 <br>
-3.)Formatting the document[https://github.com/Madi3456/Group-15/commit/a2f13a6d9eafb0284e50f033887bfb401a62b66a]
+3.)Formatting the document[https://github.com/Madi3456/Group-15/commit/232638c8237e889e958e00f5b64bf026e09c5f4f]
 </p>
 
 ## Natasha Garg - Quality Control

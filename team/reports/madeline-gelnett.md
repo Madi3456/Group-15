@@ -23,4 +23,7 @@ Link:https://github.com/Madi3456/Group-15/commit/f92c8ecb67527cd799b3441bf97ce04
 <p>Finish text files for m3 and also worked on my mermaid diagram. Attempted to start working on the database just need to find a place to store stuff. Link:https://github.com/Madi3456/Group-15/commit/24cc623e747dc413df3576084f402710304772c4 </p>
 
 ## 11/17/2024 2:11pm
-<p>Updating the UI diagrams to have the new UI html files. Also adding the old stuff from milestone 2 to three as a not much has changed</p>
+<p>Updating the UI diagrams to have the new UI html files. Also adding the old stuff from milestone 2 to three as a not much has changed[https://github.com/Madi3456/Group-15/commit/8ffe11b839c6fb131c2347a6c82dcb34913b8597]</p>
+
+## 11/17/2023 4:18pm
+<p>Updated the storage file to make store user's more effectively. Made the user ID the key to find them in the data base. [https://github.com/Madi3456/Group-15/commit/8ffe11b839c6fb131c2347a6c82dcb34913b8597]</p>

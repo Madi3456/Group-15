@@ -13,7 +13,7 @@ export class UserDataBase {
       request.onupgradeneeded = function (event) {
         let db = event.target.result;
         if (!db.objectStoreNames.contains("users")) {
-          db.createObjectStore("users", { keyPath: "id" });
+          db.createObjectStore("users",{keyPath:"id"});
         }
       };
       request.onsuccess = function (event) {
@@ -29,7 +29,7 @@ export class UserDataBase {
     const db = await this.openDatabase();
     const tx = db.transaction("users", "readwrite");
     const store = tx.objectStore("users");
-    store.add(user,user.getUserID);
+    store.add(user);
 
     return new Promise((resolve, reject) => {
       tx.oncomplete = function () {

@@ -108,16 +108,22 @@ const results = ()=>{
         questionbox.appendChild(answer);
         testList.appendChild(questionbox);
     }
+
+    const buttonStorage = document.createElement("div");
+    buttonStorage.classList.add("test-list");
     const button = document.createElement("button");
     button.classList.add("submit-button");
     button.innerHTML="Back";
-    testList.appendChild(button);
+    buttonStorage.appendChild(button);
+
     button.addEventListener("click",()=>{location.href = "intro.html"});
     const button2 = document.createElement("button");
     button2.classList.add("submit-button");
     button2.innerHTML="Restart";
     button2.addEventListener("click",()=>{location.href = "testing.html"})
-    testList.appendChild(button2);
+    buttonStorage.appendChild(button2);
+
+    testList.appendChild(buttonStorage);
 }
 
 
@@ -138,13 +144,13 @@ t.set("What is an object-oriented computer programming language commonly used to
 t.set("What sound do frogs make?","ribbit");
 t.set("Is 326 awesome?","yes");
 
-const set1 = new StudySet("CICS 326",t);
-user1.addSets(set1);
+// const set1 = new StudySet("CICS 326",t);
+// user1.addSets(set1);
 
-userStorage.addTask(user1);
-
-
-const taskDB = new window.UserDatabase("TaskDB");
-await taskDB.addUser(user1);
-const username = await taskDB.getUsers();
-console.log(username);
+// const userDB = new UserDataBase("testDB");
+// try {
+//     await userDB.addUser(user1);
+//     console.log("Users added successfully.");
+//   } catch (error) {
+//     console.error("Error adding users:", error);
+// }
