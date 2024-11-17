@@ -1,4 +1,4 @@
-<!-- This is the the feature diagram for a test box. Where it displays questions and takes in the user's answers to store the results of the test. -->
+<p>This is the the feature diagram for a test box. Where it displays questions and takes in the user's answers to store the results of the test.</p>
 
 ```mermaid
 sequenceDiagram
