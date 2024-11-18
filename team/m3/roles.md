@@ -29,11 +29,11 @@
 <br>
 **Top 3 commits**
 <br>
-1.) Made group chat for everyone in their tasks (front end, back end)
+1.) at first, i created a skeleton for the intro screen.  i added the hover feature to show when you’re going above a certain option, but everything else was pretty basic
 <br>
-2.) Allocated tasks within front end group (assigned who does what)
+2.) for my second commit, i made the diagram a little more complex. i added the social media logos at the end of the screen. i also improved the font for a better feel and i added the book logo near the “freelit” page. overall, i improved the design aspect of the intro screen significantly
 <br>
-3.) Answered any questions peers has regarding what they specficially should be doing 
+3.) i did my final iteration of the intro screen after my peers completed their respective screens. 
 </p>
 
 ## Sydnie Lui - Communication Leader
