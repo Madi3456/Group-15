@@ -28,6 +28,6 @@
 
 
 ### November 17, 2024
-- **Task**: Designed 'learn.css' file 
-- **Details**: Desgned the UI for the learn page
-- **Link to Commit**: [[https://github.com/Madi3456/Group-15/commit/f821e2e2d97f6cd5e596ea040af779c553ec5167]]
+- **Task**: Added graph to 'learn.css' file 
+- **Details**: Added a bar graph under the table to visualize the data
+- **Link to Commit**: https://github.com/Madi3456/Group-15/pull/59/commits/a6d3c7aad0f426ca2960eb6f94d1a64542d1eaae
