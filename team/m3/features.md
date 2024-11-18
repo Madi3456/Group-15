@@ -2,7 +2,12 @@
 Feature Name: Back/Restart Button
 Description: This feature allows the user to restart the quiz after their results come in or go back to the home screen. These two buttons are stored together and displayed after all the answer boxes on the results page.
 Point Value: 1 point
-Team Member: Madeline Gelnett
+Team Member: Madeline Gelnett<p>
+
+Feature Name: Simple Click to Test Result<br>
+Description: Students can view the details of the test result in the table by clicking on the test number. For this milestone is just returns an alert that it would redirect them to the results page but once the backend is also set up would take the user to the particular test's result page.<br>
+Point Value: 1 point <br>
+Assigned Team Member: Natasha Garg
 
 <h4>Medium Features (2-3 points)</h4>
 Feature Name: Score
@@ -16,8 +21,12 @@ Point Value: 3 points
 Team Member: Madeline Gelnett
 
 <h4>Large Features (4-5 points)</h4>
-Feature Name: Testing-Boxes
-Description: A dashboard that retrieves sets from IndexedDB from the user and visualizes them using test boxes with questions. The user can in put their answers which are recorded and compared to the corrected answers. The results are then stored back into the set of the Indexed DB to appear on the learn page.
+Feature Name: Testing-Boxes 
+Description: A dashboard that retrieves sets from IndexedDB from the user and visualizes them using test boxes with questions. The user can in put their answers which are recorded and compared to the corrected answers. The results are then stored back into the set of the Indexed DB to appear on the learn page. 
 Point Value: 5 points
-Team Member: Madeline Gelnett
+Team Member: Madeline Gelnett <p>
 
+Feature Name: Bar Graph of Test Scores <br>
+Description: Students can view an interactive bar graph that visually tracks their progress, making it easy to identify trends and improvements over time. The graph will retrieve multiple data sets from IndexedDB and visualize them. <br>
+Point Value: 4 points <br>
+Assigned Team Member: Natasha Garg
