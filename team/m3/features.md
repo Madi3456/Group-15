@@ -4,6 +4,11 @@
 <h4>View and edit flash cards within study sets</h4>
     <p>Description: Student's can open a study set and view all the flashcards inside it, add to the set, and edit existing cards. There are edit and deletion buttons for each card, which change card states to editable and changes their inner html. The list of flashcards dynamically changes based on user input. 4 points.
     <br>Assigned Team Member: Andrew Corbett</p>
+
+<h4>Test History mode</h4>
+<p>Description: Students can view their past test scores, when they took them, and the subject or topic of each test. A bar graph shows their test scores over time, making it easy to see improvements. They can also select any test to view detailed results and understand their mistakes.
+    <br>Point Value: 
+    <br>Assigned Team Member: Natasha Garg</p>
 <h4>Flash card mode</h4>
     <p>Description: Student's can use their study sets to use flash card mode. The flash card as a definition and word side. The student can choose to used defintion as the first side they see or word side. The other side will be on the back of the card. The student can click the check box or x if they get it right or not. If the student clicks X then they are set as to be studied later. If check they are ignored. The next time the student studies the card it will be the one with the x cards. The cycle repeats until there is no more x cards. There is a bar for the user to see how many of the cards they know and don't know. There is also a reset button to reset the user's process if they wish to study again.</p>
 <h4>Test Mode</h4>
