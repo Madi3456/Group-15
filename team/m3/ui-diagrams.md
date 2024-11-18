@@ -5,7 +5,7 @@
 The **Introduction Screen** is the first thing the users will see. They will be able to log in or sign up to view their progress, and they will also be able to view various services that the app offers if they have not yet chosen to make an account of Freelit 
 
 
-<img width="858" alt="Screenshot 2024-10-21 at 11 35 27 PM" src=""https://github.com/user-attachments/assets/9a13986e-5871-4833-b3a5-90a9d0aa23ad">
+<img width="858" alt="Screenshot 2024-10-21 at 11 35 27 PM" src="https://github.com/user-attachments/assets/9a13986e-5871-4833-b3a5-90a9d0aa23ad">
 
 
 On this screen, users will be able to do a few introductory things:
