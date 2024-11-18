@@ -16,11 +16,7 @@
 <br>
 **Top 3 commits**
 <br>
-1.) Added information to 'problem.md' https://github.com/Madi3456/Group-15/commit/406cf9c9062a4d680bf0a10f97c18e4e01fb1f90
-<br>
-2.)Added and edited information in 'user.md' https://github.com/Madi3456/Group-15/commit/2cd3747058782f2358c9f0d4e92464bf8cf1cb91
-<br>
-3.)Made changes to the formatting of 'roles.md' https://github.com/Madi3456/Group-15/commit/f821e2e2d97f6cd5e596ea040af779c553ec5167
+1.) Learn page [https://github.com/Madi3456/Group-15/commit/406cf9c9062a4d680bf0a10f97c18e4e01fb1f90](https://github.com/Madi3456/Group-15/commit/ddabb4dc01dbc9c34bfd8208c375b5c01b348738)
 </p>
 
 ## Khushali Bhatt - Task Manager
@@ -56,11 +52,11 @@
 <br>
 **Top 3 commits**
 <br>
-1.)Added correctness feature: https://github.com/Madi3456/Group-15/commit/a18906264af95a4e6fac6eaf3b5159b561794839
+1.) Created functions that make flashcards readible for users: https://github.com/Madi3456/Group-15/commit/efb8ebc26df36659c367936d9b6a410733badc18 
 <br>
-2.) Changed feature name: https://github.com/Madi3456/Group-15/commit/8daeb1e99724989f663ebec2c2ca9d98b4627e44
+2.) Created input boxes/buttons on page: https://github.com/Madi3456/Group-15/commit/1e07191d9a70600cb5c59d523d4312c675d9d9e0
 <br>
-3.)Edited descriptions: https://github.com/Madi3456/Group-15/commit/59deb5ff7c9faf9054dda97a24a7dc2bcd851a22
+3.)Customized styling of creating studyset webpage: https://github.com/Madi3456/Group-15/commit/d17013da52d1d1fb2226d63d52411a0aacafb780
 
 
 </p>
