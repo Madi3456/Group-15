@@ -1,9 +1,9 @@
-# Feature: Display Test Scores and Generate Graph
+Feature: Display Test Scores and Generate Graph
 
-## Description
+Description:
 This feature displays a table of test scores along with a graph visualizing the scores. Users can interact with the table by clicking on a test number to get a detailed result page (simulated with an alert). The system involves populating the table dynamically, handling click events, and rendering a graph using Chart.js.
 
-## Sequence Diagram
+Sequence Diagram:
 
 ```mermaid
 sequenceDiagram
