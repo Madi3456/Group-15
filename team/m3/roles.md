@@ -81,6 +81,6 @@
 <br>
 2.) Inserted images/icons for the Freelit logo and social media links along the bottom(Facebook, Instagram, and Twitter)
 <br>
-3.) Updated the UI-Diagram with the most recent image of the Sign-In/Login-In page(UI Diagram)
+3.) Updated the ui-diagrams.md with the most recent image of the Sign-In/Login-In page(UI Diagram)
 </p>
 
