@@ -17,6 +17,10 @@
 **Top 3 commits**
 <br>
 1.) Learn page [https://github.com/Madi3456/Group-15/commit/406cf9c9062a4d680bf0a10f97c18e4e01fb1f90](https://github.com/Madi3456/Group-15/commit/ddabb4dc01dbc9c34bfd8208c375b5c01b348738)
+<br>
+2.) modified the ui to maintain consistency [https://github.com/Madi3456/Group-15/commit/7c7bc9a4cf141b4e93ccc566bfcda4b5711a549d]
+<br>
+3.) made the sequence diagram for my top feature [https://github.com/Madi3456/Group-15/commit/895d1464dbae4169d8b437650cec1b71519d4d74]
 </p>
 
 ## Khushali Bhatt - Task Manager
