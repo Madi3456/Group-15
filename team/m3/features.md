@@ -10,9 +10,19 @@ Point Value: 1 point <br>
 Assigned Team Member: Natasha Garg
 
 Feature Name: Simple "Start Learning Now" Button<br>
-Description: Students csn click on "start learning now" if they are not sure exactly where to go. This will directly lead them to the log in page. This is not fully implemented for this milestone <br>
+Description: Students can click on "start learning now" if they are not sure exactly where to go. This will directly lead them to the log in page. This is not fully implemented for this milestone <br>
 Point Value: 1 point <br>
 Assigned Team Member: Khushali Bhatt
+
+Feature Name: Simple "Sign In" Button<br>
+Description: Students can click on the "Sign In" button once they enter their email address and create a password to sign up/create an account for the FreeLit Service. Due to this milestone's requirements, this is not fully implemented yet. <br>
+Point Value: 1 point <br>
+Assigned Team Member: Meghan Duddu
+
+Feature Name: Simple "Log In" Button<br>
+Description: Students can click on the "Log In" button once they enter their email address and password to access their user account for the FreeLit Service. Due to this milestone's requirements, this is not fully implemented yet. <br>
+Point Value: 1 point <br>
+Assigned Team Member: Meghan Duddu
 
 <h4>Medium Features (2-3 points)</h4>
 Feature Name: Score
