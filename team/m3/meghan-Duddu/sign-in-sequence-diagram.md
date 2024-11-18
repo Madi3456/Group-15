@@ -5,6 +5,7 @@ This feature displays ways for the users to log in if they are returning or sign
 
 Sequence Diagram:
 
+```mermaid
 sequenceDiagram
     participant User
     participant UI as User Interface
