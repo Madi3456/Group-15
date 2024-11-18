@@ -12,17 +12,15 @@ sequenceDiagram
     participant JS as JavaScript
     participant Chart as Chart.js
 
-    User->>UI: Open the Test Scores page
     UI->>JS: Request to populate table
-    JS->>JS: Dynamically generate table rows
     JS->>UI: Render table with test data
 
     User->>UI: Click on test number
     UI->>JS: Trigger "click" event
     JS->>JS: Simulate navigation (show alert)
-    JS-->>User: Display "Redirecting to results page..." alert
+    JS->>User: Display "Redirecting to results page..." alert
 
     UI->>JS: Request to generate graph
     JS->>Chart: Pass test scores data
-    Chart-->>JS: Generate bar chart
+    Chart->>JS: Generate bar chart
     JS->>UI: Render graph below table
