@@ -45,3 +45,9 @@ Feature Name: Bar Graph of Test Scores <br>
 Description: Students can view an interactive bar graph that visually tracks their progress, making it easy to identify trends and improvements over time. The graph will retrieve multiple data sets from IndexedDB and visualize them. <br>
 Point Value: 4 points <br>
 Assigned Team Member: Natasha Garg
+
+Feature Name: Flashcard viewer and editor <br>
+Description: When opening a set of flashcards, the user will be able to see the current flashcards in their set (retrieved from IndexedDB), and be able to add to the list, edit, or delete each entry. There are buttons for adding cards, deleting, editing, and the list dynamically changes based on user input. Cards hide definitions until they are hovered onto.<br>
+Point Value: 4 points <br>
+Assigned Team Member: Andrew Corbett
+
