@@ -33,7 +33,7 @@
 <br>
 2.) for my second commit, i made the diagram a little more complex. i added the social media logos at the end of the screen. i also improved the font for a better feel and i added the book logo near the “freelit” page. overall, i improved the design aspect of the intro screen significantly [https://github.com/Madi3456/Group-15/commit/7dfaf30d828120de0258a40d91dcc22587ef5d42]
 <br>
-3.) i did my final iteration of the intro screen after my peers completed their respective screens. 
+3.) i did my final iteration of the intro screen after my peers completed their respective screens. I added a button that says "start learning now" that will be another way to access the sign in screen when clicked. [https://github.com/Madi3456/Group-15/commit/95fbf541b7869df229793c94d3e1583e1e4e4f7d]
 </p>
 
 ## Sydnie Lui - Communication Leader
