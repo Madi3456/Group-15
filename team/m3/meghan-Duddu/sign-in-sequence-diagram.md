@@ -1,7 +1,7 @@
 Feature: Sign-In/Login-In Screen
 
 Description:
-This feature displays ways for the users to log in if they are returning or sign up if they are new to the site. Additionally, the site's socials are linked along the bottom as well which can be accessed by clicking on each icon. Users can interact with the site by clicking on the boxes provided to create their username and password or use their login to get into their account. The system mainly handles click events.
+This feature displays ways for the users to log in if they are returning or sign up if they are new to the site. Additionally, the site's socials are linked along the bottom as well which can be accessed by clicking on each icon. Users can interact with the site by clicking on the boxes provided to create their email and password or use their login to get into their account. The system mainly handles click events.
 
 Sequence Diagram:
 
