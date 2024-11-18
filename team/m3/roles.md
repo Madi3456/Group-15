@@ -77,10 +77,10 @@
 <br>
 **Top 3 commits**
 <br>
-1.) Finished roles.md
+1.) Created the Sign-In/Login-In page with the buttons and labels for user interaction
 <br>
-2.)Created the SignUp/Login Screen(UI Diagram)
+2.) Inserted images/icons for the Freelit logo and social media links along the bottom(Facebook, Instagram, and Twitter)
 <br>
-3.)Created the Subjects Screen(UI Diagram)
+3.) Updated the UI-Diagram with the most recent image of the Sign-In/Login-In page(UI Diagram)
 </p>
 
