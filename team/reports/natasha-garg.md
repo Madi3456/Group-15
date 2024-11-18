@@ -14,3 +14,20 @@
 - **Task**: Modified 'roles.md' file formatting and information
 - **Details**: Made required changes to the format of the file and added information for a fellow teammmate.
 - **Link to Commit**: https://github.com/Madi3456/Group-15/commit/f821e2e2d97f6cd5e596ea040af779c553ec5167
+
+### November 16, 2024
+- **Task**: Designed 'learn.html' file 
+- **Details**: Made the table of test scores and their informations
+- **Link to Commit**: [https://github.com/Madi3456/Group-15/commit/f821e2e2d97f6cd5e596ea040af779c553ec5167]
+
+
+### November 17, 2024
+- **Task**: Designed 'learn.css' file 
+- **Details**: Desgned the UI for the learn page
+- **Link to Commit**: [[https://github.com/Madi3456/Group-15/commit/f821e2e2d97f6cd5e596ea040af779c553ec5167]]
+
+
+### November 17, 2024
+- **Task**: Designed 'learn.css' file 
+- **Details**: Desgned the UI for the learn page
+- **Link to Commit**: [[https://github.com/Madi3456/Group-15/commit/f821e2e2d97f6cd5e596ea040af779c553ec5167]]
