@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelit - Optimize Your Study Sessions, For Free!</title>
+    <title>Freelet - Optimize Your Study Sessions, For Free!</title>
     <style>
         * {
             margin: 0;
@@ -64,7 +64,57 @@
             color: #666;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        /* New Call-to-Action Button Styles */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            max-width: fit-content;
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #45a049 0%, #357a38 100%);
+        }
+
+        .cta-button:hover:before {
+            left: 100%;
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .right-section {
@@ -147,6 +197,7 @@
                 <h1 class="logo-text">Freelit</h1>
             </div>
             <p class="tagline">Optimize your study sessions, for free!</p>
+            <a href="#" class="cta-button">Start Learning Now</a>
         </div>
         
         <div class="right-section">
@@ -155,12 +206,21 @@
                 <span class="close-search">×</span>
             </div>
             
-            <button class="menu-button">Sign Up / Log In</button>
-            <button class="menu-button">Tests</button>
-            <button class="menu-button">Subjects</button>
-            <button class="menu-button">Study Guides</button>
-            <button class="menu-button">Flashcards</button>
-            <button class="menu-button">Learn</button>
+            <button id="btn-sign-in" class="menu-button">Sign Up / Log In</button>
+            <button id="btn-tests" class="menu-button">Tests</button>
+            <button id="btn-subjects" class="menu-button">Subjects</button>
+            <button id="btn-study-guides" class="menu-button">Study Guides</button>
+            <button id="btn-flashcards" class="menu-button">Flashcards</button>
+            <button id="btn-learn" class="menu-button">Test History</button>
+            
+            <script>
+                document.getElementById("btn-sign-in").onclick = () => location.href = "sign-in.html";
+                document.getElementById("btn-tests").onclick = () => location.href = "testing.html";
+                document.getElementById("btn-subjects").onclick = () => location.href = "subjects.html";
+                document.getElementById("btn-study-guides").onclick = () => location.href = "entering-study-sets.html";
+                document.getElementById("btn-flashcards").onclick = () => location.href = "inside-the-sets.html";
+                document.getElementById("btn-learn").onclick = () => location.href = "learn.html";
+            </script>
             
             <div class="social-links">
                 <a href="#" class="social-link">
