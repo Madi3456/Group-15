@@ -8,6 +8,6 @@ participant Javascript
 
 Javascript->>UI: Javascript alerting user of what subject they chose and when you are entering the study set
 User->>UI: Selecting subject
-UI->>Javascript: Saving chosen subject
-Javascript->>Database: Storing subject selected
+UI->>Javascript: Saving selected subject
+Javascript->>Database: Storing selected subject
 ```
