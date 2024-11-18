@@ -9,6 +9,11 @@ Description: Students can view the details of the test result in the table by cl
 Point Value: 1 point <br>
 Assigned Team Member: Natasha Garg
 
+Feature Name: Simple "Start Learning Now" Button<br>
+Description: Students csn click on "start learning now" if they are not sure exactly where to go. This will directly lead them to the log in page. This is not fully implemented for this milestone <br>
+Point Value: 1 point <br>
+Assigned Team Member: Khushali Bhatt
+
 <h4>Medium Features (2-3 points)</h4>
 Feature Name: Score
 Description: The score takes the answers and see's how many are right it then displays above the answer boxes the total score the user got right out of 100. This is what is stored and sent off to the IndexedDB storing the progress for the sets.
