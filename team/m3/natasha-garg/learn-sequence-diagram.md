@@ -10,7 +10,6 @@ sequenceDiagram
     participant User
     participant UI as User Interface
     participant JS as JavaScript
-    participant Chart as Chart.js
 
     UI->>JS: Request to populate table
     JS->>UI: Render table with test data
@@ -18,9 +17,7 @@ sequenceDiagram
     User->>UI: Click on test number
     UI->>JS: Trigger "click" event
     JS->>JS: Simulate navigation (show alert)
-    JS->>User: Display "Redirecting to results page..." alert
+    JS->>User: Display alert
 
     UI->>JS: Request to generate graph
-    JS->>Chart: Pass test scores data
-    Chart->>JS: Generate bar chart
     JS->>UI: Render graph below table
