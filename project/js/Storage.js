@@ -13,7 +13,7 @@ export class UserDataBase {
       request.onupgradeneeded = function (event) {
         let db = event.target.result;
         if (!db.objectStoreNames.contains("users")) {
-          db.createObjectStore("users",{keyPath:"id"});
+          db.createObjectStore("users", { keyPath: "userID" });
         }
       };
       request.onsuccess = function (event) {
@@ -25,7 +25,11 @@ export class UserDataBase {
     });
   }
 
+  // Method to add a task
   async addUser(user) {
+    if (!user.userID) {
+    throw new Error("User must have a valid userID");
+  }
     const db = await this.openDatabase();
     const tx = db.transaction("users", "readwrite");
     const store = tx.objectStore("users");
@@ -33,10 +37,10 @@ export class UserDataBase {
 
     return new Promise((resolve, reject) => {
       tx.oncomplete = function () {
-        resolve("User added successfully!");
+        resolve("Task added successfully!");
       };
       tx.onerror = function () {
-        reject("Failed to add user.");
+        reject("Failed to add task.");
       };
     });
   }
@@ -108,17 +112,18 @@ export class StudySet{
 }
 
 export class User{
-    constructor(username,gmail,userID){
-        this.username=username;
-        this.gmail=gmail;
-        this.userID=userID;
-        this.sets=[];
+
+    constructor(username, gmail, userID) {
+      this.username = username;
+      this.gmail = gmail;
+      this.userID = userID;  // Ensure userID is being set correctly
+      this.sets = [];
     }
     setUsername(userName){
         this.username=userName;
     }
     getUsername(){
-        return this.username()
+        return this.username;
     }
     setGmail(gmail){
         this.gmail = gmail;

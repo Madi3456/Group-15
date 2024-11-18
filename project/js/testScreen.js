@@ -1,6 +1,9 @@
 import {UserDataBase, User, StudySet } from "../js/Storage.js";
 
-//console.log(setStorage.getTasks());
+
+
+
+
 const testTest = new Map();
 testTest.set("What is the language we use to style a Web page?","css");
 testTest.set("What is the standard markup language for Web pages?","html");
@@ -9,6 +12,42 @@ testTest.set("What sound do frogs make?","ribbit");
 testTest.set("Is 326 awesome?","yes");
 
 const key = Array.from(testTest.keys());
+
+const set1 = new StudySet("CICS 326",testTest);
+
+const user1 = new User("Maddie", "mgelnett@umass.edu", 1);
+
+
+
+// Create the UserDataBase instance
+const db = new UserDataBase('test');
+
+let result;
+
+try {
+  // Open the database
+  result = await db.openDatabase();
+  console.log("Database opened successfully.");
+} catch (error) {
+  console.log("Error opening the database:", error);
+}
+
+try {
+  // Add user to the database
+  result = await db.addUser(user1);
+  console.log("User added successfully:", result); // Should log "Task added successfully!"
+} catch (error) {
+  console.log("Failed to add user:", error);
+}
+
+try {
+  // Get all users from the database
+  result = await db.getUsers();
+  console.log("Users retrieved:", result);
+} catch (error) {
+  console.log("Error getting users:", error);
+}
+
 
 
 let questions = [];
@@ -135,22 +174,5 @@ submitButton.addEventListener("click",()=>{results()});
 
 
 
-const user1 = new User("Maddie", "mgelnett@umass.edu","1");
 
-const t = new Map();
-t.set("What is the language we use to style a Web page?","css");
-t.set("What is the standard markup language for Web pages?","html");
-t.set("What is an object-oriented computer programming language commonly used to create interactive effects within web browsers?","javascript");
-t.set("What sound do frogs make?","ribbit");
-t.set("Is 326 awesome?","yes");
-
-// const set1 = new StudySet("CICS 326",t);
-// user1.addSets(set1);
-
-// const userDB = new UserDataBase("testDB");
-// try {
-//     await userDB.addUser(user1);
-//     console.log("Users added successfully.");
-//   } catch (error) {
-//     console.error("Error adding users:", error);
-// }
+    
