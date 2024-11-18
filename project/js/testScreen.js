@@ -13,42 +13,6 @@ testTest.set("Is 326 awesome?","yes");
 
 const key = Array.from(testTest.keys());
 
-const set1 = new StudySet("CICS 326",testTest);
-
-const user1 = new User("Maddie", "mgelnett@umass.edu", 1);
-
-
-
-// Create the UserDataBase instance
-const db = new UserDataBase('test');
-
-let result;
-
-try {
-  // Open the database
-  result = await db.openDatabase();
-  console.log("Database opened successfully.");
-} catch (error) {
-  console.log("Error opening the database:", error);
-}
-
-try {
-  // Add user to the database
-  result = await db.addUser(user1);
-  console.log("User added successfully:", result); // Should log "Task added successfully!"
-} catch (error) {
-  console.log("Failed to add user:", error);
-}
-
-try {
-  // Get all users from the database
-  result = await db.getUsers();
-  console.log("Users retrieved:", result);
-} catch (error) {
-  console.log("Error getting users:", error);
-}
-
-
 
 let questions = [];
 let answers = [];
@@ -103,8 +67,9 @@ const results = ()=>{
     }
     let totalRight = 0;
     console.log(questions.length);
-    for(let i = 0;i<questions.length-1;i++){
+    for(let i = 0;i<answers.length;i++){
         if(testTest.get(key[i]).toLowerCase()==answers[i].toLowerCase()){
+
             totalRight++;
         }
     }
