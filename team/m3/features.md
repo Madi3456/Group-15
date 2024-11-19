@@ -35,14 +35,14 @@ Description: Looks at the questions asked and compared them to their answers. It
 Point Value: 3 points
 Team Member: Madeline Gelnett
 
-Feature Name: Email Input Boxes
-Description: Captures the user's email and will include basic validation, ensuring the input is in a valid email format. It also provides feedback for invalid inputs and will handle cases where authentication fails. Due to this milestone's requirements, this is not fully implemented yet.
-Point Value: 3 points
+Feature Name: Email Input Boxes<br>
+Description: Captures the user's email and will include basic validation, ensuring the input is in a valid email format. It also provides feedback for invalid inputs and will handle cases where authentication fails. Due to this milestone's requirements, this is not fully implemented yet.<br>
+Point Value: 3 points<br>
 Team Member: Meghan Duddu
 
-Feature Name: Password Input Boxes
-Description: Accepts the user's password in a secure format. It will include validation rules regarding minimum length, special characters, etc... It also provides feedback for invalid inputs and will handle cases where authentication fails. Due to this milestone's requirements, this is not fully implemented yet.
-Point Value: 3 points
+Feature Name: Password Input Boxes<br>
+Description: Accepts the user's password in a secure format. It will include validation rules regarding minimum length, special characters, etc... It also provides feedback for invalid inputs and will handle cases where authentication fails. Due to this milestone's requirements, this is not fully implemented yet.<br>
+Point Value: 3 points<br>
 Team Member: Meghan Duddu
 
 <h4>Large Features (4-5 points)</h4>
