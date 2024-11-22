@@ -68,8 +68,9 @@
 ## Andrew Corbett - Project Manager
 <p>**Role**: Andrew oversees the entire project: responsible for making meeting agendas, making sure that milestones are being completed/in a timely manner, and ensuring the team is working as a well-oiled machine.</p>
 - **Top 3 commits**:
-  1. data: https://github.com/Madi3456/Group-15/commit/a0ad32ab5d19ae023ef41165bde3dad87a756cc6
-  2. individual report: https://github.com/Madi3456/Group-15/commit/4252347a2f0ca11c5d08880dccc75f59949f89ec
+  1. [Create a mock of the page I was assigned to develop (also deleted node modules I had installed); no functionality yet](https://github.com/Madi3456/Group-15/commit/5d2ed6841edef93420310aa6fce14b4c0c6efc6c)
+  2. [Tied the pages we worked on together into one product using the intro.html screen as a hub](https://github.com/Madi3456/Group-15/commit/6efaec2b8f7b9188f50dbfb8027a23797d665655)
+  3. [developed the functionality of my page and fixed the styling more](https://github.com/Madi3456/Group-15/commit/b9deb0b6e209e8a744e421bd1dcdff2ea10b31a3)
 
 ## Meghan Duddu - Note-Taker
 <p>**Role**: Meghan is responsible for taking care of meeting minutes, recording detailed notes during meetings, and ensuring that action items are clearly addressed/communicated.
