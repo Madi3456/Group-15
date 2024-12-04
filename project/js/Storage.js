@@ -1,85 +1,97 @@
-export class UserDataBase {
-  constructor(dbName) {
-    this.dbName = dbName;
-  }
-  async openDatabase() {
-    return new Promise((resolve, reject) => {
-      if (this.dbName === "") {
-        reject("Database name cannot be empty.");
-        return;
-      }
+import PouchDB from "pouchdb";
 
-      let request = indexedDB.open(this.dbName, 1);
-      request.onupgradeneeded = function (event) {
-        let db = event.target.result;
-        if (!db.objectStoreNames.contains("users")) {
-          db.createObjectStore("users", { keyPath: "userID" });
+const initdb = async (dbname) => {
+    const db = new PouchDB(dbname);
+  
+    try {
+      const users = await db.get("users");
+    } catch (e) {
+      await db.put({ _id: "users", users: [] });
+    }
+    try {
+      const sets = await db.get("sets");
+    } catch (e) {
+      await db.put({ _id: "sets", sets: [] });
+    }
+  
+    await db.close();
+};
+
+export const replitDatabase = async (dbname) => {
+    await initdb(dbname);
+    const getDB = () => new PouchDB(dbname);
+  
+    const obj = {
+      saveUser: async (user) => {
+        try {
+          const db = getDB();
+          const data = await db.get("users");
+          data.users.push(user);
+          await db.put(data);
+          await db.close();
+          return { status: "success" };
+        } catch (e) {
+          return {
+            status: "error",
+            message: "Failed to save user",
+            error: e.message,
+          };
         }
-      };
-      request.onsuccess = function (event) {
-        resolve(event.target.result);
-      };
-      request.onerror = function (event) {
-        reject(event.target.error);
-      };
-    });
-  }
+      },
+      saveStudySet: async (set) => {
+        try {
+          const db = getDB();
+          const data = await db.get("sets");
+          data.sets.push(set);
+          await db.put(data);
+          await db.close();
+          return { status: "success" };
+        } catch (e) {
+          return {
+            status: "error",
+            message: "Failed to save set",
+            error: e.message,
+          };
+        }
+      },
+  
 
-  // Method to add a task
-  async addUser(user) {
-    if (!user.userID) {
-    throw new Error("User must have a valid userID");
-  }
-    const db = await this.openDatabase();
-    const tx = db.transaction("users", "readwrite");
-    const store = tx.objectStore("users");
-    store.add(user);
-
-    return new Promise((resolve, reject) => {
-      tx.oncomplete = function () {
-        resolve("Task added successfully!");
-      };
-      tx.onerror = function () {
-        reject("Failed to add task.");
-      };
-    });
-  }
-
-  async getUsers() {
-    const db = await this.openDatabase();
-    const tx = db.transaction("users", "readonly");
-    const store = tx.objectStore("users");
-    const stuff = store.getAll();
-
-    return new Promise((resolve, reject) => {
-      stuff.onsuccess=function(event){
-        let arr = event.target.result;
-        resolve(arr);
-      }
-      stuff.onerror = function(){
-        reject("Failed to get users.");
-      }
-    });
-  }
-
-  async deleteUser(user) {
-    const db = await this.openDatabase();
-    const tx = db.transaction("users", "readwrite");
-    const store = tx.objectStore("users");
-    const stuff = store.delete(user.userID);
-
-    return new Promise((resolve, reject) => {
-      stuff.onsuccess=function(){
-        resolve("User deleted successfully!");
-      }
-      stuff.onerror = function(){
-        reject("Failed to delete user.");
-      }
-    });
-  }
-}
-
-
+      getUsers: async () => {
+        try {
+          const db = getDB();
+          const data = await db.get("users");
+          const users=data.users;
+          await db.close();
+          return { status: "success", data:users};
+        } catch (e) {
+          return {
+            status: "error",
+            message: "Failed to get users",
+            error: e.message,
+          };
+        }
+      },
+  
+      getSets: async () => {
+        try {
+            const db = getDB();
+            const data = await db.get("sets");
+            const sets=data.sets;
+            await db.close();
+            return { status: "success", data:sets};
+          } catch (e) {
+            return {
+              status: "error",
+              message: "Failed to get sets",
+              error: e.message,
+            };
+          }
+      },
+    };
+  
+    return obj;
+  };
+  
 
 export class StudySet{
     constructor(name,dic={}){
@@ -113,11 +125,12 @@ export class StudySet{
 
 export class User{
 
-    constructor(username, gmail, userID) {
+    constructor(username,password,gmail, userID,sets=[]) {
       this.username = username;
       this.gmail = gmail;
-      this.userID = userID;  // Ensure userID is being set correctly
-      this.sets = [];
+      this.password = "";
+      this.id = userID;  // Ensure userID is being set correctly
+      this.sets = sets;
     }
     setUsername(userName){
         this.username=userName;
@@ -132,7 +145,7 @@ export class User{
         return this.gmail;
     }
     getUserID(){
-        return this.userID;
+        return this.id;
     }
     getSets(){
         return this.sets;

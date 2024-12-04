@@ -1,6 +1,8 @@
+
 let flashcards = [];
 
 function addFlashcards() {
+  
   const term = document.getElementById("term").value;           
   const definition = document.getElementById("definition").value;
 
