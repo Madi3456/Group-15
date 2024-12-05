@@ -1,7 +1,4 @@
-import {UserDataBase, User, StudySet } from "../js/Storage.js";
-
-
-
+import {replitDatabase, User, StudySet } from "../js/Storage.js";
 
 
 const testTest = new Map();
@@ -10,6 +7,7 @@ testTest.set("What is the standard markup language for Web pages?","html");
 testTest.set("What is an object-oriented computer programming language commonly used to create interactive effects within web browsers?","javascript");
 testTest.set("What sound do frogs make?","ribbit");
 testTest.set("Is 326 awesome?","yes");
+
 
 const key = Array.from(testTest.keys());
 
