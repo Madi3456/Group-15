@@ -16,7 +16,7 @@ class Server {
   configureMiddleware() {
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    this.app.use(express.static('Front-End'));
+    this.app.use(express.static(__dirname,'Front-End'));
     this.app.use(express.json({ limit: "10mb" }));
   }
 
