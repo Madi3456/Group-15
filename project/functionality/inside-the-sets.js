@@ -1,4 +1,16 @@
+import {StudySet, User } from '../js/Storage';
+
 let flashcardAddVisible = false;
+let currSet = new StudySet();
+
+// initialize the set we clicked on
+function initFlashcards() {
+    Object.entries(currSet.getDic).forEach(([key, value]) => {
+
+        // make flashcard visible
+        createFlashcard(key, value, false);
+    });
+}
 
 // adding a new card to an existing set -- after add was pressed
 function editFlashcard(flashcard) {
@@ -15,10 +27,16 @@ function editFlashcard(flashcard) {
     <div class="close-button">Delete</div>
     `;
 
+    let updatedQuestion;
+    let updatedAnswer;
+
     // Add edit functionality to the flashcard
     flashcard.querySelector('.confirm-button').addEventListener('click', function() {
         const question2 = flashcard.querySelector('.question-input').value;
         const answer2 = flashcard.querySelector('.answer-input').value;
+
+        updatedAnswer = answer2;
+        updatedQuestion = question2;
 
         flashcard.innerHTML = `
         <p class="question">${question2}</p>
@@ -29,6 +47,10 @@ function editFlashcard(flashcard) {
     flashcard.querySelector('.close-button').addEventListener('click', function() {
         flashcardsContainer.removeChild(flashcard);
     });
+
+    // update storage
+    currSet.dicRemove(question);
+    currSet.dicAdd(updatedQuestion, updatedAnswer);
 }
 
 function clickedAddNew() {
@@ -52,7 +74,7 @@ function clickedAddNew() {
 
     // add edit functionality to the flashcard
     flashcard.querySelector('.confirm-button').addEventListener('click', function() {
-        createFlashcard(flashcard.querySelector('.question-input').value, flashcard.querySelector('.answer-input').value);
+        createFlashcard(flashcard.querySelector('.question-input').value, flashcard.querySelector('.answer-input').value, true);
         flashcardsContainer.removeChild(flashcard);
         flashcardAddVisible = false;
     });
@@ -69,7 +91,7 @@ function clickedAddNew() {
 }
 
 // adding a new card to an existing set -- after add was pressed
-function createFlashcard(question, answer) {
+function createFlashcard(question, answer, updateStorage) {
     const flashcard = document.createElement('div');
     flashcard.classList.add('flashcard');
     
@@ -86,6 +108,10 @@ function createFlashcard(question, answer) {
 
     const flashcardsContainer = document.getElementById('flashcard-container');
     flashcardsContainer.appendChild(flashcard);
+
+    if (updateStorage) { // update storage if needed
+        currSet.dicAdd(question, answer);
+    }
 
     return flashcard;
 }
