@@ -5,7 +5,7 @@
 The **Introduction Screen** is the first thing the users will see. They will be able to log in or sign up to view their progress, and they will also be able to view various services that the app offers if they have not yet chosen to make an account of Freelit 
 
 
-<img width="858" alt="Screenshot 2024-10-21 at 11 35 27 PM" src=""https://github.com/user-attachments/assets/9a13986e-5871-4833-b3a5-90a9d0aa23ad">
+<img width="858" alt="Screenshot 2024-10-21 at 11 35 27 PM" src="https://github.com/user-attachments/assets/9a13986e-5871-4833-b3a5-90a9d0aa23ad">
 
 
 On this screen, users will be able to do a few introductory things:
@@ -23,8 +23,7 @@ Users can quickly log on or sign up so their flashcards/tests will be saved. The
 
 The **Sign Up/Login Screen** will pop up if prompted by the click of the sign in/login button found on the intro screen. This will allow the users to log in if they are returning or sign up if they are new to the site. They can make it through creating a username and password. Additionally, the sites socials are linked along the bottom as well.
 
-
-<img width="858" alt="Screenshot 2024-10-22 at 7 33 19 AM" src="https://github.com/user-attachments/assets/c19dd30e-00da-428b-a388-624f05ae7b11">
+<img width="1381" alt="Screen Shot 2024-11-17 at 11 39 03 PM" src="https://github.com/user-attachments/assets/a6b05843-650c-4b86-971e-bb23f55d9438">
 
 On this screen, users will be able to accomplish the following:
 1. **Log in** : Users will be able to fill out their account's username & password and click a button that will lead them into logging in, using their user credentials as returing members.

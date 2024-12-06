@@ -17,6 +17,10 @@
 **Top 3 commits**
 <br>
 1.) Learn page [https://github.com/Madi3456/Group-15/commit/406cf9c9062a4d680bf0a10f97c18e4e01fb1f90](https://github.com/Madi3456/Group-15/commit/ddabb4dc01dbc9c34bfd8208c375b5c01b348738)
+<br>
+2.) modified the ui to maintain consistency [https://github.com/Madi3456/Group-15/commit/7c7bc9a4cf141b4e93ccc566bfcda4b5711a549d]
+<br>
+3.) made the sequence diagram for my top feature [https://github.com/Madi3456/Group-15/commit/895d1464dbae4169d8b437650cec1b71519d4d74]
 </p>
 
 ## Khushali Bhatt - Task Manager
@@ -25,11 +29,11 @@
 <br>
 **Top 3 commits**
 <br>
-1.) Made group chat for everyone in their tasks (front end, back end)
+1.) at first, i created a skeleton for the intro screen.  i added the hover feature to show when you’re going above a certain option, but everything else was pretty basic [https://github.com/Madi3456/Group-15/commit/de3bee42f8ff5ffb28e6b97857ca22592bc4dd8b]
 <br>
-2.) Allocated tasks within front end group (assigned who does what)
+2.) for my second commit, i made the diagram a little more complex. i added the social media logos at the end of the screen. i also improved the font for a better feel and i added the book logo near the “freelit” page. overall, i improved the design aspect of the intro screen significantly [https://github.com/Madi3456/Group-15/commit/7dfaf30d828120de0258a40d91dcc22587ef5d42]
 <br>
-3.) Answered any questions peers has regarding what they specficially should be doing 
+3.) i did my final iteration of the intro screen after my peers completed their respective screens. I added a button that says "start learning now" that will be another way to access the sign in screen when clicked. [https://github.com/Madi3456/Group-15/commit/95fbf541b7869df229793c94d3e1583e1e4e4f7d]
 </p>
 
 ## Sydnie Lui - Communication Leader
@@ -64,8 +68,9 @@
 ## Andrew Corbett - Project Manager
 <p>**Role**: Andrew oversees the entire project: responsible for making meeting agendas, making sure that milestones are being completed/in a timely manner, and ensuring the team is working as a well-oiled machine.</p>
 - **Top 3 commits**:
-  1. data: https://github.com/Madi3456/Group-15/commit/a0ad32ab5d19ae023ef41165bde3dad87a756cc6
-  2. individual report: https://github.com/Madi3456/Group-15/commit/4252347a2f0ca11c5d08880dccc75f59949f89ec
+  1. [Create a mock of the page I was assigned to develop (also deleted node modules I had installed); no functionality yet](https://github.com/Madi3456/Group-15/commit/5d2ed6841edef93420310aa6fce14b4c0c6efc6c)
+  2. [Tied the pages we worked on together into one product using the intro.html screen as a hub](https://github.com/Madi3456/Group-15/commit/6efaec2b8f7b9188f50dbfb8027a23797d665655)
+  3. [developed the functionality of my page and fixed the styling more](https://github.com/Madi3456/Group-15/commit/b9deb0b6e209e8a744e421bd1dcdff2ea10b31a3)
 
 ## Meghan Duddu - Note-Taker
 <p>**Role**: Meghan is responsible for taking care of meeting minutes, recording detailed notes during meetings, and ensuring that action items are clearly addressed/communicated.
@@ -73,10 +78,10 @@
 <br>
 **Top 3 commits**
 <br>
-1.) Finished roles.md
+1.) Created the Sign-In/Login-In page with the buttons and labels for user interaction
 <br>
-2.)Created the SignUp/Login Screen(UI Diagram)
+2.) Inserted images/icons for the Freelit logo and social media links along the bottom(Facebook, Instagram, and Twitter)
 <br>
-3.)Created the Subjects Screen(UI Diagram)
+3.) Updated the ui-diagrams.md with the most recent image of the Sign-In/Login-In page(UI Diagram)
 </p>
 
