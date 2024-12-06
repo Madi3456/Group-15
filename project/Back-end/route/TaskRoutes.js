@@ -9,7 +9,7 @@ class TaskRoutes {
 
   initializeRoutes() {
 
-    this.router.get("/tasks", async (req, res) => {
+    this.router.get("/user", async (req, res) => {
       await TaskController.getAllIteam(req, res);
     });
 

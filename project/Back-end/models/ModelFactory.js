@@ -1,14 +1,12 @@
 import InMemoryTaskModel from "./InMemoryTaskModel.js";
-import SQLiteTaskModel from "./SQLiteTaskModel.js";
+import SQLiteUserModel from "./SQLiteUserModel.js";
 
 class _ModelFactory {
-  async getModel(model = "sqlite") {
-    //make more models later
-    if (model === "sqlite") {
-      return SQLiteTaskModel;
-    } else if (model === "sqlite-fresh") {
-      await SQLiteTaskModel.init(true);
-      return SQLiteTaskModel;
+  async getModel(model) {
+    if (model === "user") {
+      return SQLiteUserModel;
+    } else if (model === "sets") {
+      return SQLiteSetModel;
     } else {
       return InMemoryTaskModel;
     }

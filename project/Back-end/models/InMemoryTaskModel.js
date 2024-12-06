@@ -39,4 +39,5 @@ class _InMemoryTaskModel {
     }
   }
 
+const InMemoryTaskModel = new _InMemoryTaskModel();
 export default InMemoryTaskModel;

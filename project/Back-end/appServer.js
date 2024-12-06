@@ -14,9 +14,93 @@ class Server {
   }
 
   configureMiddleware() {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+
+   this.app.use("/styles",express.static(path.join(__dirname, '../Front-end/styles')));
+   this.app.use("/js",express.static(path.join(__dirname, '../Front-end/js')));
+   this.app.use("/functionality",express.static(path.join(__dirname, '../Front-end/functionality')));
+
+  //rendering the website
+    this.app.get("/", (req,res) =>{
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
-    this.app.use(express.static(__dirname,'Front-End'));
+
+    const filePath = path.join(__dirname, '../Front-End/pages/intro.html');
+    res.sendFile(filePath);
+    });
+
+    this.app.get("/intro.html", (req,res) =>{
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
+    const filePath = path.join(__dirname, '../Front-End/pages/intro.html');
+    res.sendFile(filePath);
+    });
+
+  this.app.get("/intro.html", (req,res) =>{
+
+   const __filename = fileURLToPath(import.meta.url);
+   const __dirname = path.dirname(__filename);
+
+   const filePath = path.join(__dirname, '../Front-End/pages/intro.html');
+   res.sendFile(filePath);
+   })
+
+  this.app.get("/testing.html", (req,res) =>{
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const filePath = path.join(__dirname, '../Front-end/pages/testing.html');
+    res.sendFile(filePath);
+  });
+
+  this.app.get("/entering-study-sets.html", (req,res) =>{
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
+    const filePath = path.join(__dirname, '../Front-end/pages/entering-study-sets.html');
+    res.sendFile(filePath);
+  });
+
+
+  this.app.get("/inside-the-sets.html", (req,res) =>{
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
+    const filePath = path.join(__dirname, '../Front-end/pages/inside-the-sets.html');
+    res.sendFile(filePath);
+  });
+
+  this.app.get("/learn.html", (req,res) =>{
+
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+
+  const filePath = path.join(__dirname, '../Front-end/pages/learn.html');
+  res.sendFile(filePath);
+});
+
+  this.app.get("/sign-in.html", (req,res) =>{
+
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+
+  const filePath = path.join(__dirname, '../Front-end/pages/sign-in.html');
+  res.sendFile(filePath);
+  });
+
+  this.app.get("/subjects.html", (req,res) =>{
+
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+
+    const filePath = path.join(__dirname, '../Front-end/pages/subjects.html');
+    res.sendFile(filePath);
+  });
+
     this.app.use(express.json({ limit: "10mb" }));
   }
 
@@ -35,89 +119,15 @@ console.log("Starting server...");
 const server = new Server();
 server.start();
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-
-// app.use("/styles",express.static(path.join(__dirname, '../styles')));
-// app.use("/js",express.static(path.join(__dirname, '../js')));
-// app.use("/functionality",express.static(path.join(__dirname, '../functionality')));
-
-// app.get("/", (req,res) =>{
-
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = path.dirname(__filename);
-
-//   const filePath = path.join(__dirname, '../pages/intro.html');
-//   res.sendFile(filePath);
-// })
-
-// app.get("/intro.html", (req,res) =>{
-
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = path.dirname(__filename);
-
-//   const filePath = path.join(__dirname, '../pages/intro.html');
-//   res.sendFile(filePath);
-// })
-
-// app.get("/testing.html", (req,res) =>{
-
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = path.dirname(__filename);
-
-//   const filePath = path.join(__dirname, '../pages/testing.html');
-//   res.sendFile(filePath);
-// })
-
-// app.get("/entering-study-sets.html", (req,res) =>{
-
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = path.dirname(__filename);
-
-//   const filePath = path.join(__dirname, '../pages/entering-study-sets.html');
-//   res.sendFile(filePath);
-// })
 
 
-// app.get("/inside-the-sets.html", (req,res) =>{
 
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = path.dirname(__filename);
 
-//   const filePath = path.join(__dirname, '../pages/inside-the-sets.html');
-//   res.sendFile(filePath);
-// })
 
-// app.get("/learn.html", (req,res) =>{
-
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = path.dirname(__filename);
-
-//   const filePath = path.join(__dirname, '../pages/learn.html');
-//   res.sendFile(filePath);
-// })
-
-// app.get("/sign-in.html", (req,res) =>{
-
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = path.dirname(__filename);
-
-//   const filePath = path.join(__dirname, '../pages/sign-in.html');
-//   res.sendFile(filePath);
-// })
-
-// app.get("/subjects.html", (req,res) =>{
-
-//   const __filename = fileURLToPath(import.meta.url);
-//   const __dirname = path.dirname(__filename);
-
-//   const filePath = path.join(__dirname, '../pages/subjects.html');
-//   res.sendFile(filePath);
-// })
 
 
 
 
 
 // app.listen(port);
-// console.log('Server started at http://localhost:' + port);
+console.log('Server started at http://localhost:' + 3000);

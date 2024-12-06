@@ -2,7 +2,7 @@ import ModelFactory from "../models/ModelFactory.js";
 
 class TaskController {
     constructor(){
-        ModelFactory.get().then((model)=>{
+        ModelFactory.getModel().then((model)=>{
             this.model=model;
         });
     }
