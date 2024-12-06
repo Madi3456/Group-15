@@ -15,6 +15,11 @@
       <label for="definition">Definition:</label>
       <input type="text" id="definition"/>
       <button onclick="addFlashcards()">Add Flashcard</button>
+      <button>Save Set</button>
+      <button id="viewCards">View as Flashcard Set</button>
+      <script>
+        document.getElementById("viewCards").onclick = () => location.href = "inside-the-sets.html";
+      </script>
     </div>
     <div id="flash">
     </div>
