@@ -5,12 +5,15 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f2f2f2;
+
+  background-color: #e8efe8;
+            margin: 0;
+            padding: 40px;
+            font-family:  sans-serif;
 }
 
 .container {
@@ -53,32 +56,36 @@ h2 {
 }
 
 .subject {
-  background-color: #a58e6d;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  background-color: #89a989;;
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .subject:hover {
-  background-color: #8d7254;
+  background-color: #ffffff;;
+    color: #89a989;
 }
 
 .enter-button {
   width: 100%;
-  padding: 10px;
-  background-color: #a58e6d;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  background-color: #ffffff;
+    border: 2px solid #89a98960;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 
 .enter-button:hover {
-  background-color: #8d7254;
+  transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .social-icons {
