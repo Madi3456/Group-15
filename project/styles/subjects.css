@@ -10,7 +10,7 @@ body {
   align-items: center;
   height: 100vh;
 
-  background-color: #e8efe8;
+  background-color: #89a989;
             margin: 0;
             padding: 40px;
             font-family:  sans-serif;
@@ -67,8 +67,8 @@ h2 {
 }
 
 .subject:hover {
-  background-color: #ffffff;;
-    color: #89a989;
+  background-color: #89a989;;
+    color: #ffffff;
 }
 
 .enter-button {
