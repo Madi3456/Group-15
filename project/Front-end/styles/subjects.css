@@ -10,7 +10,7 @@ body {
   align-items: center;
   height: 100vh;
 
-  background-color: #e8efe8;
+  background-color: #89a989;
             margin: 0;
             padding: 40px;
             font-family:  sans-serif;
@@ -67,8 +67,8 @@ h2 {
 }
 
 .subject:hover {
-  background-color: #ffffff;;
-    color: #89a989;
+  background-color: #89a989;;
+    color: #ffffff;
 }
 
 .enter-button {
@@ -94,12 +94,12 @@ h2 {
 
 .social-icons a {
   margin: 0 10px;
-  color: #a58e6d;
+  color: #89a989;
   text-decoration: none;
   font-size: 1.2em;
   transition: color 0.3s;
 }
 
 .social-icons a:hover {
-  color: #8d7254;
+  color: #6c826c;
 }
