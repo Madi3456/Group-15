@@ -1,0 +1,116 @@
+.header{
+    padding: 20px;
+    text-align: center;
+    background: #cfe1c9;
+    color: #666;
+    font-size: 20px;
+}
+.heading-box{
+    padding: 20px;
+    height: 150px;
+    width: 2500px;
+    text-align: center;
+    background: #cfe1c9;
+    color: #666;
+    font-size: 20px;
+}
+.flex-container{
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-self: center;
+}
+.test-list {
+    display: grid;
+    padding: 20px 0;
+    background-color: #f3f9ed;
+    grid-template-columns: 30%,30%,30%;
+    gap: 20px;
+    align-self: center;
+    justify-content: center;
+}
+.testing-box {
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+    font-family: Arial, sans-serif;
+    height: 300px;
+    width: 400px;
+    padding:20;
+    border-radius: 8px;
+    background-color: beige;
+    color:#666;
+    font-size: 25px;
+    border:2px solid #666;
+    gap:5px;
+    align-self: center;
+    justify-content: center;
+
+}
+.question {
+    font-family: Arial, sans-serif;
+    height: 70px;
+    width: 350px;
+    border-radius: 8px;
+    background-color: beige;
+    color:#666;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
+.answer {
+    font-family: Arial, sans-serif;
+    height: 70px;
+    width: 250px;
+    background-color: beige;
+    color:#666;
+    font-size: 20px;
+    align-items: center;
+}
+
+
+.results{
+    font-family: Arial, sans-serif;
+    height: 70px;
+    width: 250px;
+    background-color: #f3f9ed;
+    color:#666;
+    font-size: 20px;
+    align-items: center;
+}
+
+.result-box{
+    font-family: Arial, sans-serif;
+    height: 70px;
+    width: 250px;
+    color:#666;
+    font-size: 20px;
+    align-items: center;
+    border:2px solid #666;
+}
+
+.wrong{
+    background-color: #FFCCCB ;
+}
+
+.correct{
+    background-color: #c0e8a7 ;
+}
+
+.answer:hover{
+    background-color:#EAE3C9;
+}
+
+.submit-button{
+    display: flex;
+    background-color: #666;
+    color:white;
+    height: 30px;
+    width: 75px;
+    font-size: 15px;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.submit-button:hover{
+    background-color: #777;
+}
