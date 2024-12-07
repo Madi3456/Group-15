@@ -1,4 +1,3 @@
-import InMemoryTaskModel from "./InMemoryTaskModel.js";
 import SQLiteUserModel from "./SQLiteUserModel.js";
 
 class _ModelFactory {
@@ -7,8 +6,6 @@ class _ModelFactory {
       return SQLiteUserModel;
     } else if (model === "sets") {
       return SQLiteSetModel;
-    } else {
-      return InMemoryTaskModel;
     }
   }
 }
