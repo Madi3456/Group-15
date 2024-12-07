@@ -9,7 +9,16 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
-    "express": "^4.17.1"
+    "@sequelize/sqlite3": "^7.0.0-alpha.43",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
   }
 }

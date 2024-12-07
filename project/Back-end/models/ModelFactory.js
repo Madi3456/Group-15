@@ -13,5 +13,6 @@ class _ModelFactory {
   }
 }
 
-const ModelFactory = new _ModelFactory();
-export default ModelFactory;
+const ModelFactoryUsers = new _ModelFactory("user");
+const ModelFactorySets = new _ModelFactory("sets");
+export {ModelFactoryUsers,ModelFactorySets};

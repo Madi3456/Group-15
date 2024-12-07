@@ -23,5 +23,5 @@ function addFlashcards() {
   } 
   document.getElementById("term").value = '';
   document.getElementById("definition").value = '';
-
+  
 }
