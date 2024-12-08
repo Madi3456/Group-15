@@ -1,7 +1,7 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import dotenv from "dotenv";
-import ModelFactorUsers from "../models/SQLiteUserModel.js";
+import {User} from "../models/SQLiteUserModel.js";
 
 // Load environment variables from a .env file
 const result = dotenv.config();
@@ -20,9 +20,9 @@ passport.use(
     },
 
     async (accessToken, refreshToken, profile, done) => {
-      let user = await ModelFactorUsers.findOne({ where: { googleId: profile.id } });
+      let user = await User.findOne({ where: { googleId: profile.id } });
       if (!user) {
-        user = await ModelFactorUsers.create({
+        user = await User.create({
           googleId: profile.id,
           username: profile.displayName,
           role: "admin",
@@ -37,7 +37,7 @@ passport.serializeUser((user, done) => done(null, user.id));
 
 
 passport.deserializeUser(async (id, done) => {
-  const user = await ModelFactorUsers.findByPk(id);
+  const user = await User.findByPk(id);
   done(null, user);
 });
 

@@ -1,5 +1,5 @@
-import SQLiteUserModel from "./SQLiteUserModel.js";
-
+import {SQLiteUserModel} from "./SQLiteUserModel.js";
+import SQLiteSetModel from "./SQLiteSetModel.js";
 class _ModelFactory {
   async getModel(model) {
     if (model === "user") {
