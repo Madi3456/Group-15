@@ -6,27 +6,10 @@ const sequelize = new Sequelize({
   });
   
   const User = sequelize.define("User", {
-    userid: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true,
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    userName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    gmail: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    sets: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
+    username: { type: DataTypes.STRING, unique: true, allowNull: false },
+    password: { type: DataTypes.STRING },
+    googleId: { type: DataTypes.STRING },
+    role: { type: DataTypes.STRING, defaultValue: "user" }, // Roles: 'user', 'admin'
   });
   
   class _SQLiteUserModel {
@@ -40,7 +23,7 @@ const sequelize = new Sequelize({
       }
     }
   
-    async create(User) {
+    async create(user) {
       return await User.create(user);
     }
   
@@ -51,7 +34,11 @@ const sequelize = new Sequelize({
   
       return await User.findAll();
     }
-  
+
+    async findOne(user){
+      return await User.findOne(user);
+    }
+
     async update(user) {
       const useru = await Task.findByPk(user.userid);
       if (!user) {
@@ -73,6 +60,8 @@ const sequelize = new Sequelize({
     }
   }
   
-  const SQLiteUserModel = new _SQLiteUserModel();
+  await sequelize.sync();
+
+const SQLiteUserModel = new _SQLiteUserModel();
   
-export default SQLiteUserModel;
+export {SQLiteUserModel, User};

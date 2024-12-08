@@ -159,6 +159,7 @@
             <button id="btn-study-guides" class="menu-button">Study Guides</button>
             <button id="btn-flashcards" class="menu-button">Flashcards</button>
             <button id="btn-learn" class="menu-button">Test History</button>
+            <button id="btn-logout" class="menu-button">Log out</button>
             
             <script>
                 document.getElementById("btn-tests").onclick = () => location.href = "testing.html";
@@ -166,6 +167,15 @@
                 document.getElementById("btn-study-guides").onclick = () => location.href = "entering-study-sets.html";
                 document.getElementById("btn-flashcards").onclick = () => location.href = "inside-the-sets.html";
                 document.getElementById("btn-learn").onclick = () => location.href = "learn.html";
+                document.getElementById("btn-logout").onclick = () =>{
+                    async function logout() {
+                        const response = await fetch("/logout");
+                        const data = await response.json();
+                        console.log(JSON.stringify(data, null, 2));
+                        alert(data.message);
+                    }
+                    location.href = "sign-in.html";
+                };
             </script>
             
             <div class="social-links">
