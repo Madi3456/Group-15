@@ -111,10 +111,12 @@ export class TaskController {
 
     async addSets(req, res){
         try {
+          const { setName, subjects, data } = req.body;
+          console.log(req.body);
             if (!req.body || !req.body.item) {
                 return res.status(400).json({ error: "Sets description is required." });
             }
-            const item = await this.modelSets.create(req.body);
+            const item = await this.modelSets.create({ setName, subjects, data });
         }
         catch(e){
             return res.status(500).json({error: "Failed to add item. Please try again."});

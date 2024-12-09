@@ -3,22 +3,32 @@
 <head>
   <title>Create Study Set</title>
   <link rel="stylesheet" href="../styles/entering-study-sets.css">
-  <script src="../functionality/entering-study-sets.js"></script>
+ 
 </head>
 <body>
 
 <center>
     <h1>Create Study Set</h1>
+    <label for="name-set">Name of set:</label>
+    <input type="text" id="name-set"  />
+    <label for="subjects">Subjects:</label>
+    <input type="text" id="subjects"  />
+    <button type="button" id="add-Subject">Add</button>
     <div class="input-form">
     <label for="term">Term:</label>
       <input type="text" id="term"  />
       <label for="definition">Definition:</label>
       <input type="text" id="definition"/>
       <button onclick="addFlashcards()">Add Flashcard</button>
-      <button>Save Set</button>
+      <button id="save-set">Save Set</button>
+      <button id="viewCards">View as Flashcard Set</button>
+      <script>
+        document.getElementById("viewCards").onclick = () => location.href = "inside-the-sets.html";
+      </script>
     </div>
     <div id="flash">
     </div>
+    <script src="../functionality/entering-study-sets.js"></script>
 </center>
   
 </body>

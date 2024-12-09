@@ -6,19 +6,9 @@ const sequelize = new Sequelize({
   });
   
   const Set = sequelize.define("Set", {
-    setid: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true,
-    },
-    subjects: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    set: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    }
+    nameSet: { type: DataTypes.STRING, unique: true, allowNull: false },
+    subjects: { type: DataTypes.STRING },
+    data: { type: DataTypes.STRING }
   });
   
   class _SQLiteSetModel {
@@ -45,7 +35,7 @@ const sequelize = new Sequelize({
     }
   
     async update(set) {
-      const Setu = await Task.findByPk(set.setid);
+      const Setu = await Task.findByPk(set.nameSet);
       if (!set) {
         return null;
       }
@@ -60,11 +50,13 @@ const sequelize = new Sequelize({
         return;
       }
   
-      await Set.destroy({ where: { userid: set.setid } });
+      await Set.destroy({ where: { nameSet: set.nameSet } });
       return user;
     }
   }
   
+  await sequelize.sync();
+
   const SQLiteSetModel = new _SQLiteSetModel();
   
 export default SQLiteSetModel;

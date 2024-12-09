@@ -55,12 +55,12 @@ const sequelize = new Sequelize({
         return;
       }
   
-      await User.destroy({ where: { userid: user.userId } });
+      await User.destroy({ where: { username:user.username} });
       return user;
     }
   }
   
-  await sequelize.sync();
+await sequelize.sync();
 
 const SQLiteUserModel = new _SQLiteUserModel();
   

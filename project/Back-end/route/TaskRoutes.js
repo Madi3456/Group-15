@@ -45,10 +45,12 @@ class TaskRoutes {
     });
 
     this.router.get("/sets", async (req, res) => {
+      
       await TaskController.getAllSets(req, res);
     });
 
     this.router.post("/sets", async (req, res) => {
+      
       await TaskController.addSets(req, res);
     });
 
