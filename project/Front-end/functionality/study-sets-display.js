@@ -1,3 +1,4 @@
+
 //get the sets form data base
 async function getSets() {
     let d = [];
@@ -42,10 +43,37 @@ function generates(Sets){
       
       const questionbox = document.createElement("div");
       questionbox.classList.add("testing-box");
+
       const innertext = document.createElement("div");
       innertext.classList.add("question");
       innertext.innerHTML=Sets[i].nameSet;
+
+      const flash = document.createElement("div");
+      flash.classList.add("active-box");
+      flash.innerHTML="flashcards";
+      flash.style.left = '50%';
+      flash.style.top = '50%';
+      flash.style.transform = 'translate(40%, -50%)';
+      flash.addEventListener("click",()=>{
+        localStorage.setItem('selectedSet', JSON.stringify(getData(Sets[i])));
+        location.href = "inside-the-sets.html";
+      });
+
+      const test = document.createElement("div");
+      test.classList.add("active-box");
+      test.innerHTML="test";
+      test.style.left = '75%';
+      test.style.top = '75%';
+      test.style.transform = 'translate(40%, -70%)';
+
+      test.addEventListener("click",()=>{
+        localStorage.setItem('selectedSet', JSON.stringify(getData(Sets[i])));
+        location.href = "testing.html";
+      });
+
       questionbox.appendChild(innertext);
+      questionbox.appendChild(flash);
+      questionbox.appendChild(test);
       testList.appendChild(questionbox);
       console.log(i);
     }

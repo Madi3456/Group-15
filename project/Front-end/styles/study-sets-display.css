@@ -24,10 +24,11 @@
 }
 .test-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 3 equal columns */
-    grid-template-rows: 100px auto 200px; /* Different row heights */
-    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 20px;
     align-self: center;
+    justify-content: center;
     padding: 120px;
 }
 .testing-box {
@@ -45,6 +46,7 @@
     gap:5px;
     align-self: center;
     justify-content: center;
+    text-align: center;
 }
 .question {
     font-family: Arial, sans-serif;
@@ -53,8 +55,20 @@
     border-radius: 8px;
     background-color: beige;
     color:#666;
-    font-size: 25px;
+    font-size: 27px;
     padding: 5px;
+    text-align: center;
+}
+.active-box{
+    font-family: Arial, sans-serif;
+    height: 25px;
+    width: 90px;
+    border-radius: 8px;
+    background-color: #cfe1c9;
+    color:#666;
+    font-size: 20px;
+    padding: 5px;
+    border:2px solid #666;
     text-align: center;
 }
 
