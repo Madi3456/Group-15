@@ -30,7 +30,7 @@ console.log(data);
 let subjects = [];
 
 function addSubject() {
-  const subject = document.getElementById("subjects").value.toLowerCase();           
+  const subject = document.getElementById("subjects").value;           
   subjects.push(subject);
   console.log(subjects);
 }

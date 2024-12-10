@@ -54,10 +54,7 @@ function generates(Sets){
       flash.style.left = '50%';
       flash.style.top = '50%';
       flash.style.transform = 'translate(40%, -50%)';
-      flash.addEventListener("click",()=>{
-        localStorage.setItem('selectedSet', JSON.stringify(getData(Sets[i])));
-        location.href = "inside-the-sets.html";
-      });
+      
 
       const test = document.createElement("div");
       test.classList.add("active-box");
