@@ -1,5 +1,6 @@
 import {ModelFactoryUsers as ModelFactoryUsers,ModelFactorySets as ModelFactorySets} from "../models/ModelFactory.js";
 import {User} from "../models/SQLiteUserModel.js";
+import {Set} from "../models/SQliteSetModel.js";
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 
@@ -9,6 +10,11 @@ const factoryResponse = (status, message) => ({ status, message });
 
 const existsUser = async (username) => {
   const user = await User.findOne({ where: { username } });
+  return user;
+};
+
+const existsSet = async (nameSet) => {
+  const user = await Set.findOne({ where: { nameSet } });
   return user;
 };
 
@@ -63,7 +69,36 @@ export const getProfile = (req, res) => {
   res.json(factoryResponse(200, `Welcome, ${req.user.username}`));
 };
 
+export const getSet = async (req, res)=>{
+  const {nameSet, subjects, data} = req.body;
+  const items = await Set.findOne({where:nameSet});
+  res.json({items});
+};
 
+export const getAllSets = async (req, res)=>{
+  const items = await Set.findAll();
+  res.json({items});
+};
+
+export const addSets = async (req, res)=>{
+  try {
+    const { nameSet, subjects, data } = req.body;
+    console.log(req.body);
+      if (await existsSet(nameSet)) {
+          return res.status(400).json({ error: "Sets description is required." });
+      }
+      const item = await Set.create({ nameSet, subjects, data });
+  }
+  catch(e){
+    console.log(e);
+    return res.status(500).json({error: "Failed to add item. Please try again."});
+  }
+};
+
+export const clearSets = async(req, res) => {
+  await Set.delete();
+  res.json(await Set.findAll());
+};
 
 
 export class TaskController {
@@ -77,7 +112,7 @@ export class TaskController {
     }
 
     async getAllUsers(req, res) {
-        const items = await this.modelUsers.read();
+        const items = await User.findAll();
         res.json({items});
     }
 
@@ -104,29 +139,7 @@ export class TaskController {
     }
 
 
-    async getAllSetss(req, res) {
-        const items = await this.modelSets.read();
-        res.json({items});
-    }
 
-    async addSets(req, res){
-        try {
-          const { setName, subjects, data } = req.body;
-          console.log(req.body);
-            if (!req.body || !req.body.item) {
-                return res.status(400).json({ error: "Sets description is required." });
-            }
-            const item = await this.modelSets.create({ setName, subjects, data });
-        }
-        catch(e){
-            return res.status(500).json({error: "Failed to add item. Please try again."});
-        }
-    }
-
-    async clearSets(req, res) {
-        await this.modelSets.delete();
-        res.json(await this.modelSets.read());
-      }
 }
 
 
