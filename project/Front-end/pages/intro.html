@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelet - Optimize Your Study Sessions, For Free!</title>
+    <title>Freelit - Optimize Your Study Sessions, For Free!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         * {
             margin: 0;
@@ -64,6 +65,57 @@
             color: #666;
             text-transform: uppercase;
             letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+
+        /* New Call-to-Action Button Styles */
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            max-width: fit-content;
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #45a049 0%, #357a38 100%);
+        }
+
+        .cta-button:hover:before {
+            left: 100%;
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .right-section {
@@ -123,7 +175,7 @@
             padding-top: 2rem;
         }
 
-        .social-link {
+        .social-links a {
             width: 40px;
             height: 40px;
             display: flex;
@@ -146,6 +198,7 @@
                 <h1 class="logo-text">Freelit</h1>
             </div>
             <p class="tagline">Optimize your study sessions, for free!</p>
+            <a href="#" class="cta-button">Start Learning Now</a>
         </div>
         
         <div class="right-section">
@@ -154,6 +207,7 @@
                 <span class="close-search">×</span>
             </div>
             
+            <button id="btn-sign-in" class="menu-button">Sign Up / Log In</button>
             <button id="btn-tests" class="menu-button">Tests</button>
             <button id="btn-subjects" class="menu-button">Subjects</button>
             <button id="btn-study-guides" class="menu-button">Study Guides</button>
@@ -161,6 +215,7 @@
             <button id="btn-learn" class="menu-button">Test History</button>
             
             <script>
+                document.getElementById("btn-sign-in").onclick = () => location.href = "sign-in.html";
                 document.getElementById("btn-tests").onclick = () => location.href = "testing.html";
                 document.getElementById("btn-subjects").onclick = () => location.href = "subjects.html";
                 document.getElementById("btn-study-guides").onclick = () => location.href = "entering-study-sets.html";
@@ -169,23 +224,9 @@
             </script>
             
             <div class="social-links">
-                <a href="#" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                    </svg>
-                </a>
-                <a href="#" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <rect x="2" y="2" width="20" height="20" rx="5"/>
-                        <circle cx="12" cy="12" r="4"/>
-                        <circle cx="17" cy="7" r="1"/>
-                    </svg> 
-                </a>
-                <a href="#" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
-                    </svg>
-                </a>
+                <a href="https://www.facebook.com/quizlet/?locale=en_GB" class="fa fa-facebook"></a>
+                <a href="https://www.instagram.com/quizlet/?hl=en" class="fa fa-instagram"></a>
+                <a href="https://x.com/quizlet?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter"></a>
             </div>
         </div>
     </div>
