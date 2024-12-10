@@ -32,20 +32,20 @@ async function register() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
-  });
+    });
 
-  if (!response.ok) {
-    if (response.status === 400) {
-      alert("Username taken.");
-      console.log("Error 400: Username taken");
-      isValid=false;
+    if (!response.ok) {
+      if (response.status === 400) {
+        alert("Username taken.");
+        console.log("Error 400: Username taken");
+        isValid=false;
+      }
+    }else{
+      const data = await response.json();
+      console.log("Registration successful:", data);
+      isValid=true;
     }
-  }else{
-    const data = await response.json();
-    console.log("Registration successful:", data);
-    isValid=true;
-  }
-}catch(error) {
+  }catch(error) {
     alert("An error occurred");
     console.error(error);
     isValid = false;
@@ -62,26 +62,28 @@ async function register() {
 
     isValid=true;
 
-    const response = await fetch("/v1/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password }),
-    }).then(response => {
+    try{
+      const response = await fetch("/v1/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
       if (!response.ok) {
         if (response.status === 401) {
           alert("Username doesn't exist.");
           console.log(400);
           isValid=false;
         }
-      }
-      else{
+      }else{
+        const data = await response.json();
+        console.log("Registration successful:", data);
         isValid=true;
       }
-      return response.json();
-    }).catch(error => {
-      alert("Username doesn't exist.");
-      isValid=false;
-    });
+    }catch(error){
+      alert("An error occurred");
+      console.error(error);
+      isValid = false;
+    };
 
     if(isValid){
       const data = response;
