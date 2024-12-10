@@ -5,7 +5,11 @@ import {TaskController,register,
   logout,
   googleAuthCallback,
   getAdminArea,
-  getProfile
+  getProfile,
+  addSets,
+  getSet,
+  getAllSets,
+  clearSets,
 } from "../controller/TaskController.js";
 
 
@@ -45,17 +49,16 @@ class TaskRoutes {
     });
 
     this.router.get("/sets", async (req, res) => {
-      
-      await TaskController.getAllSets(req, res);
+      await getAllSets(req, res);
     });
 
     this.router.post("/sets", async (req, res) => {
-      
-      await TaskController.addSets(req, res);
+      console.log("hello")
+      await addSets(req, res);
     });
 
     this.router.delete("/sets", async (req, res) => {
-      await TaskController.clearSets(req, res);
+      await clearSets(req, res);
     });
   
   this.router.post("/register", register);

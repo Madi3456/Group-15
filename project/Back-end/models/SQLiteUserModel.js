@@ -5,23 +5,23 @@ const sequelize = new Sequelize({
     storage: "database.sqlite",
   });
   
-  const User = sequelize.define("User", {
-    username: { type: DataTypes.STRING, unique: true, allowNull: false },
-    password: { type: DataTypes.STRING },
-    googleId: { type: DataTypes.STRING },
-    role: { type: DataTypes.STRING, defaultValue: "user" }, // Roles: 'user', 'admin'
-  });
+const User = sequelize.define("User", {
+  username: { type: DataTypes.STRING, unique: true, allowNull: false },
+  password: { type: DataTypes.STRING },
+  googleId: { type: DataTypes.STRING },
+  role: { type: DataTypes.STRING, defaultValue: "user" }, // Roles: 'user', 'admin'
+});
   
-  class _SQLiteUserModel {
-    constructor() {}
+class _SQLiteUserModel {
+  constructor() {}
   
-    async init(fresh = false) {
-      await sequelize.authenticate();
-      await sequelize.sync({ force: true });
-      if (fresh) {
-        await this.delete();
-      }
+  async init(fresh = false) {
+    await sequelize.authenticate();
+    await sequelize.sync({ force: true });
+    if (fresh) {
+      await this.delete();
     }
+  }
   
     async create(user) {
       return await User.create(user);
@@ -29,7 +29,7 @@ const sequelize = new Sequelize({
   
     async read(id = null) {
       if (id) {
-        return await User.findByPk(id);
+        return await User.findByPk(username);
       }
   
       return await User.findAll();
@@ -40,7 +40,7 @@ const sequelize = new Sequelize({
     }
 
     async update(user) {
-      const useru = await Task.findByPk(user.userid);
+      const useru = await Task.findByPk(user.username);
       if (!user) {
         return null;
       }
