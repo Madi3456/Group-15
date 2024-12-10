@@ -1,7 +1,16 @@
-// app.js
+import dotenv from "dotenv";
+const result = dotenv.config();
+if (result.error) {
+  console.error('Error loading .env file:', result.error);
+} else {
+  console.log('Environment variables loaded successfully');
+}
+console.log("hello");
 import express from "express";
+import session from "express-session";
 import path from "path";
 import { fileURLToPath } from 'url';
+import passport from "./authentication/passport.js"
 
 // Server.js
 import TaskRoutes from "./route/TaskRoutes.js";
@@ -21,21 +30,21 @@ class Server {
    this.app.use("/js",express.static(path.join(__dirname, '../Front-end/js')));
    this.app.use("/functionality",express.static(path.join(__dirname, '../Front-end/functionality')));
 
-  //rendering the website
+    //rendering the website
     this.app.get("/", (req,res) =>{
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
 
-    const filePath = path.join(__dirname, '../Front-End/pages/intro.html');
+    const filePath = path.join(__dirname, '../Front-End/pages/initial-page.html');
     res.sendFile(filePath);
     });
 
-    this.app.get("/intro.html", (req,res) =>{
+    this.app.get("/initial-page.html", (req,res) =>{
 
     const __filename = fileURLToPath(import.meta.url);
     const __dirname = path.dirname(__filename);
 
-    const filePath = path.join(__dirname, '../Front-End/pages/intro.html');
+    const filePath = path.join(__dirname, '../Front-End/pages/initial-page.html');
     res.sendFile(filePath);
     });
 
@@ -55,6 +64,13 @@ class Server {
     res.sendFile(filePath);
   });
 
+  this.app.get("/study-sets-display.html", (req,res) =>{
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const filePath = path.join(__dirname, '../Front-end/pages/study-sets-display.html');
+    res.sendFile(filePath);
+  });
+
   this.app.get("/entering-study-sets.html", (req,res) =>{
 
     const __filename = fileURLToPath(import.meta.url);
@@ -63,7 +79,6 @@ class Server {
     const filePath = path.join(__dirname, '../Front-end/pages/entering-study-sets.html');
     res.sendFile(filePath);
   });
-
 
   this.app.get("/inside-the-sets.html", (req,res) =>{
 
@@ -101,7 +116,24 @@ class Server {
     res.sendFile(filePath);
   });
 
-    this.app.use(express.json({ limit: "10mb" }));
+
+
+  this.app.use(express.json({ limit: "10mb" }));
+  
+  //for authentication 
+  //console.log(process.env.SESSION_SECRET);
+  this.app.use(express.urlencoded({ extended: false }));
+  this.app.use(
+    session({
+      secret: process.env.SESSION_SECRET,
+      resave: false,
+      saveUninitialized: false,
+    })
+  );
+  this.app.use(passport.initialize());
+  this.app.use(passport.session());
+  
+
   }
 
   setupRoutes() {
@@ -119,15 +151,4 @@ console.log("Starting server...");
 const server = new Server();
 server.start();
 
-
-
-
-
-
-
-
-
-
-
-// app.listen(port);
 console.log('Server started at http://localhost:' + 3000);

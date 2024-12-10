@@ -5,34 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Subjects Screen - FreeLit</title>
   <link rel="stylesheet" href="../styles/subjects.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  <style>
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(217, 233, 229);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .button:hover {
+       
+        color: black;
+    }
+    .button {
+        color: rgb(104, 104, 104);
+        padding: 10px 30px;
+      
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+   
+</style>
+
   <div class="container">
-    <h1>FreeLit</h1>
-    <p>Optimize Your Study Sessions, For Free!</p>
-    <h2>Subjects</h2>
+    <section class="banner">
+      <div>
+          <a id="home" class="button">Home</a>
+          <a id="tests" class="button">Test</a>
+          <a id="history" class="button">Test History</a>
+          <a id="studyGuides" class="button">Study Guides</a>
+          <a id="flashcards" class="button">Flashcards</a>
+          <a id="logOut" class="button">Log out</a>
+  
+      </div>
+  </section>
+    <h1>Freelit</h1>
+    <p>OPTIMIZE YOUR STUDY SESSIONS, FOR FREE!</p>
+    
     
     <div class="subjects-grid">
-      <div class="subject" onclick="selectSubject('Math')">Math</div>
-      <div class="subject" onclick="selectSubject('Science')">Science</div>
-      <div class="subject" onclick="selectSubject('English')">English</div>
-      <div class="subject" onclick="selectSubject('Languages')">Languages</div>
-      <div class="subject" onclick="selectSubject('Social Studies')">Social Studies</div>
-      <div class="subject" onclick="selectSubject('Art')">Art</div>
-      <div class="subject" onclick="selectSubject('Music')">Music</div>
-      <div class="subject" onclick="selectSubject('More')">More...</div>
+      <div class="subject" onclick="selectSubject('MATH')">MATH</div>
+      <div class="subject" onclick="selectSubject('SCIENCE')">SCIENCE</div>
+      <div class="subject" onclick="selectSubject('ENGLISH')">ENGLISH</div>
+      <div class="subject" onclick="selectSubject('LANGUAGES')">LANGUAGES</div>
+      <div class="subject" onclick="selectSubject('SOCIAL STUDIES')">SOCIAL STUDIES</div>
+      <div class="subject" onclick="selectSubject('ART')">ART</div>
+      <div class="subject" onclick="selectSubject('MUSIC')">MUSIC</div>
+      <div class="subject" onclick="selectSubject('MORE')">MORE...</div>
     </div>
     
-    <button class="enter-button" onclick="enterStudySession()">Enter</button>
-    
+    <button class="enter-button" onclick="enterStudySession()">ENTER</button>
+
     <div class="social-icons">
-      <a href="#" target="_blank">Facebook</a>
-      <a href="#" target="_blank">Twitter</a>
-      <a href="#" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com/quizlet/?locale=en_GB" class="fa fa-facebook"></a>
+      <a href="https://www.instagram.com/quizlet/?hl=en" class="fa fa-instagram"></a>
+      <a href="https://x.com/quizlet?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="fa fa-twitter"></a>
+    </a>
     </div>
+    
   </div>
   
   <script>
+  
+      document.getElementById("home").onclick = () => location.href = "intro.html";
+      document.getElementById("history").onclick = () => location.href = "learn.html";
+      document.getElementById("tests").onclick = () => location.href = "testing.html";
+      document.getElementById("studyGuides").onclick = () => location.href = "entering-study-sets.html";
+      document.getElementById("flashcards").onclick = () => location.href = "inside-the-sets.html";
+      document.getElementById("logOut").onclick = () =>{
+          async function logout() {
+              const response = await fetch("/logout");
+              const data = await response.json();
+              console.log(JSON.stringify(data, null, 2));
+              alert(data.message);
+          }
+          location.href = "sign-in.html";
+      };
+  
     function selectSubject(subject) {
       alert("You selected " + subject);
     }
@@ -42,4 +99,5 @@
   </script>
     
 </body>
+
 </html>

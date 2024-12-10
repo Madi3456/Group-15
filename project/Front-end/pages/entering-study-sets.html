@@ -3,22 +3,83 @@
 <head>
   <title>Create Study Set</title>
   <link rel="stylesheet" href="../styles/entering-study-sets.css">
-  <script src="../functionality/entering-study-sets.js"></script>
 </head>
 <body>
 
 <center>
+  <style>
+    .banner {
+      
+        width: 100%;
+        height: 60px;
+        background-color: rgb(217, 233, 229);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .button:hover {
+       
+        color: black;
+    }
+    .button {
+        color: rgb(104, 104, 104);
+        padding: 10px 30px;
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+   
+</style>
+<section class="banner">
+    <div>
+        <a id="home" class="button">Home</a>
+        <a id="history" class="button">Test History</a>
+        <a id="subjects" class="button">Subjects</a>
+        <a id="tests" class="button">Tests</a>
+        <a id="flashcards" class="button">Flashcards</a>
+        <a id="logOut" class="button">Log out</a>
+
+    </div>
+</section>
+<script>
+    document.getElementById("home").onclick = () => location.href = "intro.html";
+    document.getElementById("history").onclick = () => location.href = "learn.html";
+    document.getElementById("subjects").onclick = () => location.href = "subjects.html";
+    document.getElementById("tests").onclick = () => location.href = "testing.html";
+    document.getElementById("flashcards").onclick = () => location.href = "inside-the-sets.html";
+    document.getElementById("logOut").onclick = () =>{
+        async function logout() {
+            const response = await fetch("/logout");
+            const data = await response.json();
+            console.log(JSON.stringify(data, null, 2));
+            alert(data.message);
+        }
+        location.href = "sign-in.html";
+    };
+</script>
     <h1>Create Study Set</h1>
+    <label for="name-set">Name of set:</label>
+    <input type="text" id="name-set"  />
+    <label for="subjects">Subjects:</label>
+    <input type="text" id="subjects"  />
+    <button type="button" id="add-Subject">Add</button>
     <div class="input-form">
     <label for="term">Term:</label>
       <input type="text" id="term"  />
       <label for="definition">Definition:</label>
       <input type="text" id="definition"/>
       <button onclick="addFlashcards()">Add Flashcard</button>
-      <button>Save Set</button>
+      <button id="save-set">Save Set</button>
+      <button id="viewCards">View as Flashcard Set</button>
+      <script>
+        document.getElementById("viewCards").onclick = () => location.href = "inside-the-sets.html";
+      </script>
     </div>
     <div id="flash">
     </div>
+    <script src="../functionality/entering-study-sets.js"></script>
 </center>
   
 </body>

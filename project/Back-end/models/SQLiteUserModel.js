@@ -5,55 +5,42 @@ const sequelize = new Sequelize({
     storage: "database.sqlite",
   });
   
-  const User = sequelize.define("User", {
-    userid: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      primaryKey: true,
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    userName: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    gmail: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    sets: {
-        type: DataTypes.STRING,
-        allowNull: true,
-      },
-  });
+const User = sequelize.define("User", {
+  username: { type: DataTypes.STRING, unique: true, allowNull: false },
+  password: { type: DataTypes.STRING },
+  googleId: { type: DataTypes.STRING },
+  role: { type: DataTypes.STRING, defaultValue: "user" }, // Roles: 'user', 'admin'
+});
   
-  class _SQLiteUserModel {
-    constructor() {}
+class _SQLiteUserModel {
+  constructor() {}
   
-    async init(fresh = false) {
-      await sequelize.authenticate();
-      await sequelize.sync({ force: true });
-      if (fresh) {
-        await this.delete();
-      }
+  async init(fresh = false) {
+    await sequelize.authenticate();
+    await sequelize.sync({ force: true });
+    if (fresh) {
+      await this.delete();
     }
+  }
   
-    async create(User) {
+    async create(user) {
       return await User.create(user);
     }
   
     async read(id = null) {
       if (id) {
-        return await User.findByPk(id);
+        return await User.findByPk(username);
       }
   
       return await User.findAll();
     }
-  
+
+    async findOne(user){
+      return await User.findOne(user);
+    }
+
     async update(user) {
-      const useru = await Task.findByPk(user.userid);
+      const useru = await Task.findByPk(user.username);
       if (!user) {
         return null;
       }
@@ -68,11 +55,13 @@ const sequelize = new Sequelize({
         return;
       }
   
-      await User.destroy({ where: { userid: user.userId } });
+      await User.destroy({ where: { username:user.username} });
       return user;
     }
   }
   
-  const SQLiteUserModel = new _SQLiteUserModel();
+await sequelize.sync();
+
+const SQLiteUserModel = new _SQLiteUserModel();
   
-export default SQLiteUserModel;
+export {SQLiteUserModel, User};

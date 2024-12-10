@@ -10,7 +10,59 @@
 </head>
   
 </head>
-<body style="background-color: #f3f9ed;">
+<style>
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(217, 233, 229);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .button:hover {
+       
+        color: black;
+    }
+    .button {
+        color: rgb(104, 104, 104);
+        padding: 10px 30px;
+      
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+   
+</style>
+<section class="banner">
+    <div>
+        <a id="home" class="button">Home</a>
+        <a id="tests" class="button">Test History</a>
+        <a id="subjects" class="button">Subjects</a>
+        <a id="studyGuides" class="button">Study Guides</a>
+        <a id="flashcards" class="button">Flashcards</a>
+        <a id="logOut" class="button">Log out</a>
+
+    </div>
+</section>
+<script>
+    document.getElementById("home").onclick = () => location.href = "intro.html";
+    document.getElementById("tests").onclick = () => location.href = "learn.html";
+    document.getElementById("subjects").onclick = () => location.href = "subjects.html";
+    document.getElementById("studyGuides").onclick = () => location.href = "entering-study-sets.html";
+    document.getElementById("flashcards").onclick = () => location.href = "inside-the-sets.html";
+    document.getElementById("logOut").onclick = () =>{
+        async function logout() {
+            const response = await fetch("/logout");
+            const data = await response.json();
+            console.log(JSON.stringify(data, null, 2));
+            alert(data.message);
+        }
+        location.href = "sign-in.html";
+    };
+</script>
 <div class="flex-container">
     <div class="header"> 
         <!-- <img src="https://github.com/user-attachments/assets/6620d8f6-fb40-4e40-876b-3642a04ff953" alt="Hover Image" width="75" class="hover-image"> -->

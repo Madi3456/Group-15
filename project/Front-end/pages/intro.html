@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../functionality/intro.js"></script>
     <title>Freelit - Optimize Your Study Sessions, For Free!</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -184,9 +185,99 @@
             color: #333;
             text-decoration: none;
         }
+
+        /* Added profile spot so you can see what profile you are signed in as */ 
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            position: relative;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            max-height: 60px; /* Set a max height */
+            min-height: 50px; /* Set a minimum height */
+            flex-shrink: 0; /* Prevent the profile box from shrinking */
+            padding-right: 30px; /* Added padding to the right to accommodate the logout icon */
+        }
+
+        .profile:hover {
+            transform: scale(1.05); /* Grows the profile slightly when hovered */
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ddd; /* Placeholder for profile icon */
+        }
+
+        .logout-icon svg {
+            margin-left: 10px;
+            color: #555;
+            transition: transform 0.2s ease;
+        }
+
+        .logout-icon:hover svg {
+            transform: scale(1.2);
+            color: #f00;
+        }
+
+        .logout-text {
+            position: absolute;
+            top: -40%;
+            right: 0px;
+            background-color: #333;
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            white-space: nowrap;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            transform: translateY(5px);
+        }
+
+        /* Show logout text on hover */
+        .logout-icon:hover .logout-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .username {
+            font-size: 1rem;
+            color: #333;
+        }
+
+
     </style>
 </head>
 <body>
+    <!-- Added profile spot so you can see what profile you are signed in as -->
+    <div class="profile">
+        <div class="profile-info">
+            <svg class="profile-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30">
+                <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-3.31 0-6 2.69-6 6h12c0-3.31-2.69-6-6-6z"/>
+            </svg>            
+            <span class="username">Username</span>
+        </div>
+        <div class="logout-icon" id="btn-logout">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 17l5-5-5-5M21 12H9M13 5v-2a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2" />
+            </svg>
+            <span class="logout-text">Logout</span>
+        </div>
+    </div>    
+    
     <div class="container">
         <div class="left-section">
             <div class="logo-container">
@@ -218,9 +309,18 @@
                 document.getElementById("btn-sign-in").onclick = () => location.href = "sign-in.html";
                 document.getElementById("btn-tests").onclick = () => location.href = "testing.html";
                 document.getElementById("btn-subjects").onclick = () => location.href = "subjects.html";
-                document.getElementById("btn-study-guides").onclick = () => location.href = "entering-study-sets.html";
+                document.getElementById("btn-study-guides").onclick = () => location.href = "study-sets-display.html";
                 document.getElementById("btn-flashcards").onclick = () => location.href = "inside-the-sets.html";
                 document.getElementById("btn-learn").onclick = () => location.href = "learn.html";
+                document.getElementById("btn-logout").onclick = () =>{
+                    async function logout() {
+                        const response = await fetch("/logout");
+                        const data = await response.json();
+                        console.log(JSON.stringify(data, null, 2));
+                        alert(data.message);
+                    }
+                    location.href = "sign-in.html";
+                };
             </script>
             
             <div class="social-links">
