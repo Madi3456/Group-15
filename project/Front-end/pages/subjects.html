@@ -8,10 +8,48 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  <style>
+    .banner {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        background-color: rgb(217, 233, 229);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .button:hover {
+       
+        color: black;
+    }
+    .button {
+        color: rgb(104, 104, 104);
+        padding: 10px 30px;
+      
+        font-size: 1.1rem;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+   
+</style>
+
   <div class="container">
+    <section class="banner">
+      <div>
+          <a id="home" class="button">Home</a>
+          <a id="tests" class="button">Test</a>
+          <a id="history" class="button">Test History</a>
+          <a id="studyGuides" class="button">Study Guides</a>
+          <a id="flashcards" class="button">Flashcards</a>
+          <a id="logOut" class="button">Log out</a>
+  
+      </div>
+  </section>
     <h1>Freelit</h1>
     <p>OPTIMIZE YOUR STUDY SESSIONS, FOR FREE!</p>
-    <h2>Subjects</h2>
+    
     
     <div class="subjects-grid">
       <div class="subject" onclick="selectSubject('MATH')">MATH</div>
@@ -36,6 +74,22 @@
   </div>
   
   <script>
+  
+      document.getElementById("home").onclick = () => location.href = "intro.html";
+      document.getElementById("history").onclick = () => location.href = "learn.html";
+      document.getElementById("tests").onclick = () => location.href = "testing.html";
+      document.getElementById("studyGuides").onclick = () => location.href = "entering-study-sets.html";
+      document.getElementById("flashcards").onclick = () => location.href = "inside-the-sets.html";
+      document.getElementById("logOut").onclick = () =>{
+          async function logout() {
+              const response = await fetch("/logout");
+              const data = await response.json();
+              console.log(JSON.stringify(data, null, 2));
+              alert(data.message);
+          }
+          location.href = "sign-in.html";
+      };
+  
     function selectSubject(subject) {
       alert("You selected " + subject);
     }
