@@ -52,6 +52,7 @@ async function register() {
   }
 
   if(isValid){
+    localStorage.setItem("user",Username);
     location.href = "intro.html";
   }
 }
@@ -86,6 +87,7 @@ async function register() {
     if(isValid){
       const data = response;
       console.log(JSON.stringify(data, null, 2));
+      localStorage.setItem("user",Username);
       location.href = "intro.html";
     }
   }
