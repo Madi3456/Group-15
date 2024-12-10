@@ -55,8 +55,8 @@ const sequelize = new Sequelize({
     }
   }
   
-  await sequelize.sync();
+await sequelize.sync();
 
-  const SQLiteSetModel = new _SQLiteSetModel();
+const SQLiteSetModel = new _SQLiteSetModel();
   
-export default SQLiteSetModel;
+export {SQLiteSetModel,Set};

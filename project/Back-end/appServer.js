@@ -64,6 +64,13 @@ class Server {
     res.sendFile(filePath);
   });
 
+  this.app.get("/study-sets-display.html", (req,res) =>{
+    const __filename = fileURLToPath(import.meta.url);
+    const __dirname = path.dirname(__filename);
+    const filePath = path.join(__dirname, '../Front-end/pages/study-sets-display.html');
+    res.sendFile(filePath);
+  });
+
   this.app.get("/entering-study-sets.html", (req,res) =>{
 
     const __filename = fileURLToPath(import.meta.url);
