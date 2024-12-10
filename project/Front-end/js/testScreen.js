@@ -123,7 +123,7 @@ export function building_test(){
     button.innerHTML="Back";
     buttonStorage.appendChild(button);
 
-    button.addEventListener("click",()=>{localStorage.clear();location.href = "intro.html";});
+    button.addEventListener("click",()=>{localStorage.removeItem("selectedSet");location.href = "intro.html";});
     const button2 = document.createElement("button");
     button2.classList.add("submit-button");
     button2.innerHTML="Restart";
