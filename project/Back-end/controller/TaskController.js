@@ -80,6 +80,35 @@ export const getAllSets = async (req, res)=>{
   res.json({items});
 };
 
+export const deleteFlashcardFromSet = async (req, res) => {
+  try {
+    const { nameSet, flashcardId } = req.body;
+
+    // Find the set by name
+    const set = await Set.findOne({ where: { nameSet } });
+    if (!set) {
+      return res.status(404).json({ error: "Set not found." });
+    }
+
+    // Parse the data field assuming it's JSON
+    const flashcards = JSON.parse(set.data || "[]");
+
+    // Filter out the flashcard to be deleted
+    const updatedFlashcards = flashcards.filter(
+      (flashcard) => flashcard.id !== flashcardId
+    );
+
+    // Update the set data
+    set.data = JSON.stringify(updatedFlashcards);
+    await set.save();
+
+    res.json({ message: "Flashcard deleted successfully.", data: updatedFlashcards });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: "Failed to delete flashcard. Please try again." });
+  }
+};
+
 export const addSets = async (req, res)=>{
   try {
     const { nameSet, subjects, data } = req.body;
@@ -137,10 +166,6 @@ export class TaskController {
         const items = await this.modelUsers.read();
         res.json({items});
     }
-
-
-
 }
-
 
 export default new TaskController();
