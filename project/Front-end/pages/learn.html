@@ -26,63 +26,61 @@
 
     <script>
         // Fake data
-        const testData = [
-            { subject: "Math", score: 100, date: "2024-11-03" },
-            { subject: "Science", score: 40, date: "2024-11-05" },
-            { subject: "Math", score: 0, date: "2024-11-10" },
-        ];
+        document.addEventListener("DOMContentLoaded", () => {
+            const tableBody = document.getElementById("scoreTable");
 
-        const tableBody = document.getElementById("scoreTable");
+            const loadTestHistory = () => {
+            const testData = JSON.parse(localStorage.getItem("testHistory")) || [];
+            tableBody.innerHTML = ""; // Clear previous entries
 
-        const showResultsPage = (index) => {
-            location.href = "testing.html";
-        };
+            testData.forEach((data, index) => {
+                const row = `<tr>
+                    <td>
+                        <a href="#" onclick="showResultsPage(${index})">${index + 1}</a>
+                    </td>
+                    <td>${data.subject}</td>
+                    <td>${data.score}/100</td>
+                    <td>${data.date}</td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
 
-        testData.forEach((data, index) => {
-            const row = `<tr>
-                <td>
-                    <a href="#" onclick="showResultsPage(${index})">${index + 1}</a>
-                </td>
-                <td>${data.subject}</td>
-                <td>${data.score}/100</td>
-                <td>${data.date}</td>
-            </tr>`;
-            tableBody.innerHTML += row;
-        });
+            const labels = testData.map((_, index) => `Test #${index + 1}`);
+            const scores = testData.map(data => data.score);
 
-        const labels = testData.map((_, index) => `Test #${index + 1}`);
-        const scores = testData.map(data => data.score);
-
-        const ctx = document.getElementById('scoreChart').getContext('2d');
-        const scoreChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Scores',
-                    data: scores,
-                    backgroundColor: '#89a980',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Score'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Tests'
+            const ctx = document.getElementById('scoreChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Scores',
+                        data: scores,
+                        backgroundColor: '#89a980',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Score'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Tests'
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
+        };
+        loadTestHistory();
+    });
     </script>
 </body>
 </html>

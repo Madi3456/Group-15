@@ -72,13 +72,21 @@ const results = ()=>{
         }
     }
 
+    const score = (totalRight / key.length) * 100;
+    const date = new Date().toISOString().split('T')[0]; 
+    const result = { subject: "-", score, date }; 
+
+    const existingResults = JSON.parse(localStorage.getItem("testHistory")) || [];
+    existingResults.push(result);
+    localStorage.setItem("testHistory", JSON.stringify(existingResults));
+
     const submitButton = document.getElementById("submit");
     submitButton.remove();
     const testList= document.getElementById("list");
-    const result = document.createElement("div");
+    const resultBox = document.createElement("div");
     result.classList.add("results");
-    result.innerHTML="Results = " + totalRight/key.length*100+"%";
-    testList.appendChild(result);
+    result.innerHTML="Results = ${score}%";
+    testList.appendChild(resultBox);
 
     for(let i = 0;i<answers.length;i++){
         console.log(i);
