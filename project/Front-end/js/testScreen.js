@@ -77,6 +77,14 @@ export function building_test(){
         }
         }
 
+        const score = (totalRight / key.length) * 100;
+        const date = new Date().toISOString().split('T')[0]; 
+        const testResult = { subject: "-", score, date };
+
+        const existingResults = JSON.parse(localStorage.getItem("testHistory")) || [];
+        existingResults.push(testResult);
+        localStorage.setItem("testHistory", JSON.stringify(existingResults));
+
         const submitButton = document.getElementById("submit");
         submitButton.remove();
         const testList= document.getElementById("list");
@@ -141,6 +149,7 @@ export function building_test(){
     
 
 }
+//loading currently selected set
 window.onload = () => {
     const storedSet = localStorage.getItem('selectedSet');
     console.log(storedSet);

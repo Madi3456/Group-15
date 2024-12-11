@@ -21,7 +21,7 @@ loginEmail.addEventListener("keyup", ()=>{Username=loginEmail.value});
 loginPassword.addEventListener("keyup", ()=>{Password=loginPassword.value});
 
 
-
+//register function
 async function register() {
   const username = Username;
   const password = Password;
@@ -57,6 +57,7 @@ async function register() {
   }
 }
 
+//login function
   async function login() {
     const username = Username;
     const password = Password;
