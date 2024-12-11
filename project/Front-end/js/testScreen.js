@@ -22,11 +22,7 @@ export function building_test(){
         answers[a]=null;
     }
 
-<<<<<<< HEAD
-    const score = (totalRight / key.length) * 100;
-    const date = new Date().toISOString().split('T')[0]; 
-    const result = { subject: "-", score, date }; 
-
+    
     const existingResults = JSON.parse(localStorage.getItem("testHistory")) || [];
     existingResults.push(result);
     localStorage.setItem("testHistory", JSON.stringify(existingResults));
@@ -45,7 +41,7 @@ export function building_test(){
     const build = () => {
     const testList= document.getElementById("list");
     for(let i = 0;i<key.length;i++){
->>>>>>> origin/main
+
         questions.push(key[i]);
         const questionbox = document.createElement("div");
         questionbox.classList.add("testing-box");
