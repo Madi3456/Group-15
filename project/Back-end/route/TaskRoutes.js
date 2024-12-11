@@ -61,8 +61,8 @@ class TaskRoutes {
       await clearSets(req, res);
     });
 
-    this.router.post("/test-results", addTestResult);
-    this.router.get("/test-results", getTestResults);
+    // this.router.post("/test-results", addTestResult);
+    // this.router.get("/test-results", getTestResults);
   
   this.router.post("/register", register);
   this.router.post("/login", login);
