@@ -1,5 +1,25 @@
 let flashcardAddVisible = false;
 
+// import current set of flashcards from storage
+
+window.onload = () => {
+    const storedSet = localStorage.getItem('selectedSet');
+    console.log(storedSet);
+
+    if (storedSet) {
+        // Parse the stored set data into an object
+        const selectedSet = JSON.parse(storedSet);
+        
+        // Iterate over each key-value pair in the map/dict
+        Object.entries(selectedSet).forEach(([question, answer]) => {
+            // Use the createFlashcard function to generate a flashcard
+            createFlashcard(question, answer);
+        });
+    } else {
+        console.error('No set found in localStorage');
+    }
+};
+
 // adding a new card to an existing set -- after add was pressed
 function editFlashcard(flashcard) {
 
@@ -89,3 +109,6 @@ function createFlashcard(question, answer) {
 
     return flashcard;
 }
+
+
+// 
