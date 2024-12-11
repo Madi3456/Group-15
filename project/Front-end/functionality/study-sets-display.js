@@ -37,6 +37,7 @@ console.log(getData(await getSetByName("Test")));
 
 
 function generates(Sets){
+  console.log(Sets);
     console.log(Sets.length);
     const testList = document.getElementById("list");
     for(let i = 0;i<Sets.length;i++){
@@ -76,4 +77,45 @@ function generates(Sets){
     }
 }
 
-generates(await getSets());
+
+
+
+
+let set = await getSets();
+async function sortBySubject(subject){
+  let subjectMatches = [];
+  for(let i = 0;i<set.length;i++){ 
+    let sub = getSubjects(set[i]);
+    for(let j = 0;j<sub.length;j++){
+      console.log(sub);
+      if(sub==subject){
+        subjectMatches.push(set[i]);
+      }
+    }
+  }
+  return subjectMatches;
+}
+let subjectSet=[];
+const userSelectSubject = localStorage.getItem('userSelectSubject');
+if(userSelectSubject!=null){
+  subjectSet = await sortBySubject(userSelectSubject);
+}
+window.onload = () => {
+  const userSelectSubject = localStorage.getItem('userSelectSubject');
+  const userSetHistory = localStorage.getItem('currentUserSets');
+  console.log(userSetHistory);
+  
+  if(userSelectSubject){
+    generates(subjectSet);
+    localStorage.removeItem('userSelectSubject');
+  }
+  else if (userSetHistory) {
+      // Parse the stored set data into an object
+      const userSetHistory = JSON.parse(userSetHistory);
+
+      // Call the function to dynamically generate the test based on the retrieved set
+      generates(userSetHistory);
+  } else {
+    generates(set);
+  }
+};
