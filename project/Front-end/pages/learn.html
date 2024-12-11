@@ -78,17 +78,15 @@
         };
         // Fake data
         const testData = [
-            { subject: "History", score: 85, date: "2024-11-01" },
-            { subject: "Math", score: 92, date: "2024-11-03" },
-            { subject: "Science", score: 78, date: "2024-11-05" },
-            { subject: "History", score: 88, date: "2024-11-07" },
-            { subject: "Math", score: 95, date: "2024-11-10" },
+            { subject: "Math", score: 100, date: "2024-11-03" },
+            { subject: "Science", score: 40, date: "2024-11-05" },
+            { subject: "Math", score: 0, date: "2024-11-10" },
         ];
 
         const tableBody = document.getElementById("scoreTable");
 
         const showResultsPage = (index) => {
-            alert(`Will redirect to the results page for Test #${index + 1}.`);
+            location.href = "testing.html";
         };
 
         testData.forEach((data, index) => {
