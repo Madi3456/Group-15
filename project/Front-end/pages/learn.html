@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Scores History</title>
+    <title>Test Scores and History</title>
+    <link rel="stylesheet" href="../styles/testing.css">
     <link rel="stylesheet" href="../styles/learn.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -19,21 +20,21 @@
             align-items: center;
             text-align: center;
         }
-        
+
         .button:hover {
-           
             color: black;
         }
+
         .button {
             color: rgb(104, 104, 104);
             padding: 10px 30px;
-          
             font-size: 1.1rem;
             text-decoration: none;
             border-radius: 5px;
         }
-       
     </style>
+
+   
     <section class="banner">
         <div>
             <a id="home" class="button">Home</a>
@@ -42,10 +43,15 @@
             <a id="studyGuides" class="button">Study Guides</a>
             <a id="flashcards" class="button">Flashcards</a>
             <a id="logOut" class="button">Log out</a>
-
         </div>
     </section>
-    <h1>Test Scores History</h1>
+
+    <div class="flex-container">
+        <h1>Test History</h1>
+        <div id="testResultsList"></div>
+    </div>
+
+    <h2>Test Scores Overview</h2>
     <table>
         <thead>
             <tr>
@@ -55,41 +61,89 @@
                 <th>Date Taken</th>
             </tr>
         </thead>
-        <tbody id="scoreTable">
-        </tbody>
+        <tbody id="scoreTable"></tbody>
     </table>
 
     <canvas id="scoreChart"></canvas>
 
-    <script>
+    <script type="module">
+        
         document.getElementById("home").onclick = () => location.href = "intro.html";
         document.getElementById("tests").onclick = () => location.href = "testing.html";
         document.getElementById("subjects").onclick = () => location.href = "subjects.html";
         document.getElementById("studyGuides").onclick = () => location.href = "entering-study-sets.html";
         document.getElementById("flashcards").onclick = () => location.href = "inside-the-sets.html";
-        document.getElementById("logOut").onclick = () =>{
+        document.getElementById("logOut").onclick = () => {
             async function logout() {
                 const response = await fetch("/logout");
                 const data = await response.json();
-                console.log(JSON.stringify(data, null, 2));
                 alert(data.message);
+                location.href = "sign-in.html";
             }
-            location.href = "sign-in.html";
+            logout();
         };
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const user = JSON.parse(localStorage.getItem('user'));
+                if (!user) {
+                    window.location.href = 'sign-in.html';
+                    return;
+                }
+
+                const response = await fetch(`/v1/test-results?userId=${user.id}`);
+                const testResults = await response.json();
+
+                const resultsList = document.getElementById('testResultsList');
+                if (testResults.length === 0) {
+                    resultsList.innerHTML = '<p>No test results found.</p>';
+                    return;
+                }
+
+                const table = document.createElement('table');
+                table.innerHTML = `
+                    <thead>
+                        <tr>
+                            <th>Set Name</th>
+                            <th>Score</th>
+                            <th>Correct Answers</th>
+                            <th>Total Questions</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${testResults.map(result => `
+                            <tr>
+                                <td>${result.setName}</td>
+                                <td>${(result.score).toFixed(2)}%</td>
+                                <td>${result.correctAnswers}</td>
+                                <td>${result.totalQuestions}</td>
+                                <td>${new Date(result.testDate).toLocaleString()}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                `;
+                resultsList.appendChild(table);
+            } catch (error) {
+                console.error('Error fetching test results:', error);
+            }
+        });
+
+       
+        const testData = [
+            { subject: "Math", score: 100, date: "2024-11-03" },
+            { subject: "Science", score: 40, date: "2024-11-05" },
+            { subject: "Math", score: 0, date: "2024-11-10" },
+        ];
+
 
         const testHistory = JSON.parse(localStorage.getItem("testHistory")) || [];
         const tableBody = document.getElementById("scoreTable");
 
-        const showResultsPage = (index) => {
-            location.href = "testing.html";
-        };
-
-        testHistory.forEach((data, index) => {
+        testData.forEach((data, index) => {
             const row = `<tr>
-                <td>
-                    <a href="#" onclick="showResultsPage(${index})">${index + 1}</a>
-                </td>
-                <td>${data.subject || "-"}</td>
+                <td>${index + 1}</td>
+                <td>${data.subject}</td>
                 <td>${data.score}/100</td>
                 <td>${data.date}</td>
             </tr>`;
@@ -115,21 +169,14 @@
                 scales: {
                     y: {
                         beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Score'
-                        }
+                        title: { display: true, text: 'Score' }
                     },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Tests'
-                        }
-                    }
+                    x: { title: { display: true, text: 'Tests' } }
                 }
             }
         });
     </script>
 </body>
 </html>
+
 
