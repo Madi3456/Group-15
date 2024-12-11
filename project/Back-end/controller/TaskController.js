@@ -1,5 +1,6 @@
 import { ModelFactoryUsers as ModelFactoryUsers, ModelFactorySets as ModelFactorySets } from "../models/ModelFactory.js";
-import { User, Set } from "../models/SQLiteUserModel.js";
+import { User } from "../models/SQLiteUserModel.js";
+import {Set} from "../models/SQliteSetModel.js";
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 
