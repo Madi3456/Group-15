@@ -51,6 +51,7 @@ async function addSet() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({nameSet,subjects,data}),
   });
+  location.href = "intro.html";
 }
 
 const submit = document.getElementById("save-set");
