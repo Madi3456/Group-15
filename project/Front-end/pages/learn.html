@@ -76,33 +76,28 @@
             }
             location.href = "sign-in.html";
         };
-        // Fake data
-        const testData = [
-            { subject: "Math", score: 100, date: "2024-11-03" },
-            { subject: "Science", score: 40, date: "2024-11-05" },
-            { subject: "Math", score: 0, date: "2024-11-10" },
-        ];
 
+        const testHistory = JSON.parse(localStorage.getItem("testHistory")) || [];
         const tableBody = document.getElementById("scoreTable");
 
         const showResultsPage = (index) => {
             location.href = "testing.html";
         };
 
-        testData.forEach((data, index) => {
+        testHistory.forEach((data, index) => {
             const row = `<tr>
                 <td>
                     <a href="#" onclick="showResultsPage(${index})">${index + 1}</a>
                 </td>
-                <td>${data.subject}</td>
+                <td>${data.subject || "-"}</td>
                 <td>${data.score}/100</td>
                 <td>${data.date}</td>
             </tr>`;
             tableBody.innerHTML += row;
         });
 
-        const labels = testData.map((_, index) => `Test #${index + 1}`);
-        const scores = testData.map(data => data.score);
+        const labels = testHistory.map((_, index) => `Test #${index + 1}`);
+        const scores = testHistory.map(data => data.score);
 
         const ctx = document.getElementById('scoreChart').getContext('2d');
         const scoreChart = new Chart(ctx, {
