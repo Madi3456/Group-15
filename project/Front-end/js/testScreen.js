@@ -77,6 +77,31 @@ export function building_test(){
         }
         }
 
+      const userId = JSON.parse(localStorage.getItem('user')).id; 
+      const setName = Object.keys(currentSetData)[0];
+
+      
+      fetch('/v1/test-results', {
+          method: 'POST',
+          headers: { //communicate with backend 
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              userId: userId,
+              setName: setName,
+              score: (totalRight/key.length*100),
+              totalQuestions: key.length,
+              correctAnswers: totalRight
+          })
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log('Test result saved:', data);
+      })
+      .catch(error => {
+          console.error('Error saving test result:', error);
+      });
+
         const score = (totalRight / key.length) * 100;
         const date = new Date().toISOString().split('T')[0]; 
         const testResult = { subject: "-", score, date };
