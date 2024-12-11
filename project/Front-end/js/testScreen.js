@@ -82,7 +82,7 @@ export function building_test(){
         const testResult = { subject: "-", score, date };
 
         const existingResults = JSON.parse(localStorage.getItem("testHistory")) || [];
-        existingResults.push(testResultesult);
+        existingResults.push(testResult);
         localStorage.setItem("testHistory", JSON.stringify(existingResults));
 
         const submitButton = document.getElementById("submit");
