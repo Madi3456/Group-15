@@ -83,7 +83,6 @@
             logout();
         };
 
-       
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const user = JSON.parse(localStorage.getItem('user'));
@@ -137,6 +136,8 @@
             { subject: "Math", score: 0, date: "2024-11-10" },
         ];
 
+
+        const testHistory = JSON.parse(localStorage.getItem("testHistory")) || [];
         const tableBody = document.getElementById("scoreTable");
 
         testData.forEach((data, index) => {
@@ -149,8 +150,8 @@
             tableBody.innerHTML += row;
         });
 
-        const labels = testData.map((_, index) => `Test #${index + 1}`);
-        const scores = testData.map(data => data.score);
+        const labels = testHistory.map((_, index) => `Test #${index + 1}`);
+        const scores = testHistory.map(data => data.score);
 
         const ctx = document.getElementById('scoreChart').getContext('2d');
         const scoreChart = new Chart(ctx, {
