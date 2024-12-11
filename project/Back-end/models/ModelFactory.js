@@ -1,6 +1,10 @@
 import {SQLiteUserModel} from "./SQLiteUserModel.js";
+<<<<<<< HEAD
 import SQLiteSetModel from "./SQLiteSetModel.js";
 import SQLiteTestModel from "./SQLiteTestModel.js";
+=======
+import {SQLiteSetModel} from "./SQliteSetModel.js";
+>>>>>>> origin/main
 class _ModelFactory {
   async getModel(model) {
     if (model === "user") {

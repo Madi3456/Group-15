@@ -11,7 +11,7 @@ body {
   height: 100vh;
   padding: 10px;
 
-  background-color: #d8f0d8;
+  background-color: #e8efe8;
             margin: 0;
             padding: 40px;
             font-family:  baskerville, serif;
@@ -25,16 +25,18 @@ body {
 
 h1 {
   font-size: 3em;
+  color: #333;
   margin-bottom: 10px;
   text-align: center;
-  font-family: palatino, serif;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 p {
   color: #666;
   margin-bottom: 40px;
-  font-size: 1.5em;
-  font-family: monaco, monospace;
+  font-size: 1.2em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 h2 {
@@ -70,9 +72,9 @@ h2 {
 }
 
 .subject {
-  background-color: #383532;
+  background-color: #bedbbe;
     border: 3px solid #2f2c2a;
-    color: #ffffff;
+    color: #666;
     font-size: 1.5em;
     padding: 1px 1px;
     border-radius: 35px;
