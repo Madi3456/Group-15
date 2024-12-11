@@ -141,6 +141,7 @@ export function building_test(){
     
 
 }
+//loading currently selected set
 window.onload = () => {
     const storedSet = localStorage.getItem('selectedSet');
     console.log(storedSet);

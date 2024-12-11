@@ -270,7 +270,8 @@
                         console.log(JSON.stringify(data, null, 2));
                         alert(data.message);
                     }
-                    localStorage.clear("user");
+                    localStorage.removeItem("user");
+                    localStorage.removeItem("currentUserSets");
                     location.href = "sign-in.html";
                 };
             </script>
