@@ -3,6 +3,7 @@ const sequelize = new Sequelize({
     dialect: "sqlite",
     storage: "database.sqlite",
 });
+//here, i am importing sequelize to connect to the database 
 
 const TestResult = sequelize.define("TestResult", {
     userId: { 
