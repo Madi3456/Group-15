@@ -127,7 +127,26 @@ export class TaskController {
             return res.status(500).json({error: "Failed to add item. Please try again."});
         }
     }
-
+    async getSetBySubject(req, res, sub) {
+      try {
+          const { setName, subjects, data } = req.body;
+          console.log(req.body);
+  
+          if (sub !== subjects) {
+              return res.status(400);
+          }
+          if (!setName || !subjects || !data) {
+              return res.status(500);
+          }
+          const item = await this.modelSets.create({ setName, subjects, data });
+  
+          return res.status(200)
+  
+      } catch (e) {
+          console.error(e);
+          return res.status(500);
+      }
+  }
     //clearsUsers in set.
     async clearUsers(req, res) {
         await this.model.delete();
