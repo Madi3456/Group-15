@@ -82,6 +82,7 @@ export const getAllSets = async (req, res)=>{
 
 export const addSets = async (req, res)=>{
   try {
+<<<<<<< Updated upstream
     const { nameSet, subjects, data } = req.body;
     console.log(req.body);
       if (await existsSet(nameSet)) {
@@ -135,6 +136,7 @@ export class TaskController {
             return res.status(500).json({error: "Failed to add item. Please try again."});
         }
     }
+<<<<<<< Updated upstream
     async getSetBySubject(req, res, sub) {
       try {
           const { setName, subjects, data } = req.body;
@@ -155,6 +157,9 @@ export class TaskController {
           return res.status(500);
       }
   }
+=======
+
+>>>>>>> Stashed changes
     //clearsUsers in set.
     async clearUsers(req, res) {
         await this.model.delete();
@@ -165,6 +170,7 @@ export class TaskController {
         res.json({items});
     }
 
+<<<<<<< Updated upstream
     async updateProgress(req, res) {
       try {
         const { userId, setName, progress } = req.body;
