@@ -61,8 +61,8 @@ class TaskRoutes {
       await clearSets(req, res);
     });
 
-    this.router.post("/test-results", addTestResult);
-    this.router.get("/test-results", getTestResults);
+    // this.router.post("/test-results", addTestResult);
+    // this.router.get("/test-results", getTestResults);
   
   this.router.post("/register", register);
   this.router.post("/login", login);
@@ -79,10 +79,14 @@ class TaskRoutes {
     googleAuthCallback
   );
 
-
   this.router.get("/admin", isAuthenticated, authorizeRole("admin"), getAdminArea);
   this.router.get("/profile", isAuthenticated, getProfile);
-  }
+
+
+  this.router.put("/progress", isAuthenticated, async (req, res) => {
+    await updateProgress(req, res);
+  });
+}
 
   getRouter() {
     return this.router;

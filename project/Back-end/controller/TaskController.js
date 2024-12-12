@@ -157,7 +157,25 @@ export class TaskController {
         res.json({items});
     }
 
+    async updateProgress(req, res) {
+      try {
+        const { userId, setName, progress } = req.body;
+        if (!userId || !setName || typeof progress !== "object") {
+          return res.status(400).json(factoryResponse(400, "Invalid input data"));
+        }
+        const userSet = await Set.findOne({ where: { userId, nameSet: setName } });
+        if (!userSet) {
+          return res.status(404).json(factoryResponse(404, "Set not found for the user"));
+        }
 
+        await userSet.update({ progress });
+
+        return res.status(200).json(factoryResponse(200, "Progress updated successfully"));
+      } catch (e) {
+        console.error(e);
+        res.status(500).json(factoryResponse(500, "Failed to update progress"));
+      }
+    };
 
 }
 

@@ -8,7 +8,11 @@ const sequelize = new Sequelize({
   const Set = sequelize.define("Set", {
     nameSet: { type: DataTypes.STRING, unique: true, allowNull: false },
     subjects: { type: DataTypes.STRING },
-    data: { type: DataTypes.STRING }
+    data: { type: DataTypes.STRING },
+    progress: {
+      type: DataTypes.JSON,
+      allowNull: true,
+    },
   });
   
   class _SQLiteSetModel {
@@ -53,6 +57,8 @@ const sequelize = new Sequelize({
       await Set.destroy({ where: { nameSet: set.nameSet } });
       return user;
     }
+
+    
   }
   
 await sequelize.sync();
