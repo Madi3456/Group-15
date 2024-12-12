@@ -30,10 +30,6 @@ const TestResult = sequelize.define("TestResult", {
         type: DataTypes.DATE, 
         defaultValue: DataTypes.NOW 
     },
-    progress: {
-        type: DataTypes.JSON,
-        allowNull: true,
-    },
 });
 
 class _SQLiteTestResultModel {
