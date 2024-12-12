@@ -88,6 +88,14 @@ export const addSets = async (req, res)=>{
           return res.status(400).json({ error: "Sets description is required." });
       }
       const item = await Set.create({ nameSet, subjects, data });
+=======
+    const { setName, subjects, data } = req.body;
+    console.log(req.body);
+      if (await existsSet(setName)) {
+          return res.status(400).json({ error: "Sets description is required." });
+      }
+      const item = await Set.create({ setName, subjects, data });
+>>>>>>> Stashed changes
   }
   catch(e){
     console.log(e);
@@ -176,6 +184,9 @@ export class TaskController {
         res.status(500).json(factoryResponse(500, "Failed to update progress"));
       }
     };
+=======
+
+>>>>>>> Stashed changes
 
 }
 
